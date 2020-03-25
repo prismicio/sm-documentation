@@ -27,10 +27,7 @@ export default {
   /*
   ** Global CSS
   */
-  css: [
-    '@/assets/css/resetr.css',
-    '@/assets/css/common.css'
-  ],
+  css: ['@/style/_global.scss'],
 
   /*
   ** Plugins to load before mounting the App
@@ -45,12 +42,19 @@ export default {
     // mofules for full static before `nuxt export` (coming in v2.12)
     '@/modules/static',
     '@/modules/crawler',
+    [
+			'vue-github-buttons/nuxt',
+			{
+				css: false,
+				useCache: false
+			}
+		],
     // https://prismic-nuxt.js.org/
     '@nuxtjs/prismic'
   ],
 
   prismic: {
-    endpoint: 'https://your-repo-name.cdn.prismic.io/api/v2',
+    endpoint: 'https://slice-machine.cdn.prismic.io/api/v2',
     linkResolver: '@/plugins/link-resolver',
     htmlSerializer: '@/plugins/html-serializer',
   },

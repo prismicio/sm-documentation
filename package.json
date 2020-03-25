@@ -13,10 +13,11 @@
   },
   "dependencies": {
     "@nuxtjs/prismic": "^1.1.0",
+    "babel-runtime": "^6.26.0",
     "cookies": "^0.8.0",
     "nuxt": "^2.11.0",
-    "prismic-javascript": "^2.1.5",
-    "prismic-vue": "^2.0.0"
+    "vue-github-buttons": "^3.1.0",
+    "vue-markdown": "^2.2.4"
   },
   "devDependencies": {
     "node-sass": "^4.13.1",

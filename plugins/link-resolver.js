@@ -7,14 +7,26 @@ export default function (doc) {
   if (doc.isBroken) {
     return '/not-found'
   }
-
-  if (doc.type === 'homepage') {
-    return '/'
+  if (doc.type === 'home') {
+    return `/`
   }
-
-  if (doc.type === 'page') {
-    return '/page/' + doc.uid
+  if (doc.type === 'component_library') {
+    return `/component-library`
   }
-
+  if (doc.uid === 'contributing') {
+    return '/wip'
+  }
+  if (doc.uid === 'about') {
+    return `/${doc.uid}`
+  }
+  if (doc.uid === 'documentation') {
+    return `/${doc.uid}`
+  }
+  if (
+    doc.tags.includes('tutorials') ||
+    doc.tags.includes('deep-learning')
+  ) {
+    return `/documentation/${doc.uid}`
+  }
   return '/not-found'
 }
