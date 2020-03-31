@@ -129,7 +129,7 @@ export default {
 @import '../../style/variables.scss';
 
 .mainMenu {
-	border-bottom: 1px solid #d3d2d2;
+	background: $black-primary;
 	height: 30px;
 	padding: 20px 0;
 	min-height: 80px;
@@ -139,18 +139,17 @@ export default {
 	.logo {
 		display: inline-flex;
 		align-items: center;
+		img{
+			position: relative;
+    		top: 3px;
+		}
 		b {
 			padding-left: 5px;
 			font-size: 16px;
-			@include md {
-				font-size: 20px;
-			}
 		}
 		a {
+			color: #fff!important;
 			font-size: 13px;
-			@include md {
-				font-size: 16px;
-			}
 		}
 	}
 	.horizontal-nav {
@@ -162,15 +161,76 @@ export default {
 		}
 		li {
 			display: inline-block;
-			margin-left: 10px;
+			margin-left: 20px;
+			a {
+				text-decoration: none;
+				color: #fff;
+				opacity: 0.5;
+				transition: opacity 0.1s ease;
+				&.nuxt-link-exact-active, &:hover {
+					opacity: 1;
+					font-weight: normal;
+				}
+			}
+			.gh-button {
+				opacity: 1;
+				color: $black-primary !important;
+				border-radius: 0.25em;
+				cursor: pointer;
+				display: inline-block;
+				font-family: $base-font-primary;
+				font-size: 12px;
+				font-weight: 600;
+				line-height: 20px;
+				padding: 3px 10px;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				color: #24292e;
+		    	background-color: #eff3f6;
+		    	background-image: -moz-linear-gradient(top, #fafbfc, #eff3f6 90%);
+		    	background-image: linear-gradient(180deg, #fafbfc, #eff3f6 90%);
+		    	filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#FFFAFBFC', endColorstr='#FFEEF2F5');
+		    	border-color: #cdcfd1;
+		    	border-color: rgba(27,31,35,.2);
+		    	&:hover{
+		    		font-weight: 600;
+		    	}
+				&-star {
+					border-radius: 0.25em;
+					color: $black-primary;
+					&:hover {
+						background-color: $grey-secondary;
+					}
+				}
+				&-fork {
+					background-color: $black-primary;
+					border-radius: 0.25em;
+					&:hover {
+						background-color: $black-secondary;
+					}
+				}
+				.octicon {
+					display: inline-block;
+					vertical-align: text-top;
+					fill: currentColor;
+				}
+			}
 		}
 	}
 	.sidebar-logo {
 		display: flex;
+		background: #171717;
 		align-items: center;
 		justify-content: space-between;
-		padding: 20px 16px;
+		padding: 25px 16px;
 		width: 100%;
+		#burger{
+			.burger-bar{
+				background-color: #fff;
+			}
+		}
 		.logo-span {
 			display: flex;
 			align-items: center;
@@ -180,6 +240,7 @@ export default {
 			font-size: 16px;
 		}
 		a {
+			color: #fff;
 			font-size: 13px;
 			@include lg {
 				font-size: 16px;
@@ -240,59 +301,10 @@ export default {
 		}
 	}
 	a {
-		display: contents;
 		text-decoration: none;
 		color: $black-primary;
-		&:visited {
-			color: $black-primary;
-		}
-		&:hover {
-			color: $black-secondary;
-		}
 	}
-	.gh-button {
-		border-radius: 0.25em;
-		border: 1px solid $black-primary;
-		cursor: pointer;
-		display: inline-block;
-		font-family: $base-font-primary;
-		font-size: 12px;
-		font-weight: 600;
-		line-height: 20px;
-		padding: 3px 10px;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		vertical-align: middle;
-		white-space: nowrap;
-		&-star {
-			background-color: #ffffff;
-			border-radius: 0.25em;
-			color: $black-primary;
-			&:hover {
-				background-color: $grey-secondary;
-			}
-		}
-		&-fork {
-			background-color: $black-primary;
-			border-radius: 0.25em;
-			color: #ffffff;
-			&:hover {
-				background-color: $black-secondary;
-			}
-			a {
-				&:visited {
-					color: #ffffff;
-				}
-			}
-		}
-		.octicon {
-			display: inline-block;
-			vertical-align: text-top;
-			fill: currentColor;
-		}
-	}
+
 	@include xl {
 		#burger {
 			display: none;

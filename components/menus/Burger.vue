@@ -54,7 +54,7 @@ button:focus {
 }
 
 .burger-bar {
-	background-color: #130f40;
+	background-color: #fff;
 	position: absolute;
 	top: 50%;
 	right: 6px;

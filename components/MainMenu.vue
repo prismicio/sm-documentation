@@ -67,7 +67,7 @@ export default {
 @import '../style/variables.scss';
 
 .mainMenu {
-	border-bottom: 1px solid #d3d2d2;
+	border-bottom: 1px solid red;
 	height: 30px;
 	padding: 20px 0;
 	min-height: 80px;
@@ -77,7 +77,7 @@ export default {
 		.text {
 			padding: 0 5px;
 			text-decoration: none;
-			color: $black-primary;
+			color: #fff;
 			&:visited {
 				font-weight: normal;
 			}

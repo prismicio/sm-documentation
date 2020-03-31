@@ -53,12 +53,18 @@ export default {
 
 .clipboard {
 	display: flex;
+	overflow-x: scroll;
 	justify-content: space-between;
-	background-color: $black-primary;
+	background-color: #eeeeef;
 	border-radius: 5px;
 	padding: 20px;
 	margin: 20px 0;
 	cursor: pointer;
+	@include lg {
+		padding: 20px 30px;
+    	margin-left: -30px;
+	    margin-right: -30px;
+    }
 	img {
 		display: none;
 		@include rwd(400) {
@@ -67,15 +73,11 @@ export default {
 		}
 	}
 	.embed-text {
-		color: #ffffff;
 		text-align: left;
 		font-size: 13px;
-		@include sm {
-			font-size: 16px;
-		}
 	}
 	&:hover {
-		background-color: $black-secondary;
+		background-color: #e2e2e2;
 	}
 }
 </style>

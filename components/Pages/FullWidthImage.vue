@@ -1,7 +1,7 @@
 <template>
-  <Body variant="body--white">
+  <figure class="block-img">
     <prismic-image :field="slice.primary.image" />
-  </Body>
+  </figure>
 </template>
 
 <script>

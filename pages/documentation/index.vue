@@ -4,8 +4,12 @@
 		<div v-for="(slice, index) in sliceContent" :key="'slice-' + index">
 			<!-- Text slice component -->
 			<TextSlice v-if="slice.slice_type === 'text'" :slice="slice" />
-			<!-- Text slice component -->
+			<!-- Title slice component -->
 			<TitleSlice v-if="slice.slice_type === 'title'" :slice="slice" />
+			<!-- Warning Text slice component -->
+			<WarningSlice v-if="slice.slice_type === 'warning'" :slice="slice" />
+			<!-- Tips Text slice component -->
+			<TipsSlice v-if="slice.slice_type === 'tips'" :slice="slice" />
 			<!-- Image component -->
 			<FullWidthImage v-if="slice.slice_type === 'image'" :slice="slice" />
 			<!-- Banner component -->
@@ -20,6 +24,8 @@
 // Imports for all slices
 const TextSlice = () => import('../../components/Pages/TextSlice.vue')
 const TitleSlice = () => import('../../components/Pages/TitleSlice.vue')
+const WarningSlice = () => import('../../components/Pages/WarningSlice.vue')
+const TipsSlice = () => import('../../components/Pages/TipsSlice.vue')
 const FullWidthImage = () => import('../../components/Pages/FullWidthImage.vue')
 const BannerSlice = () => import('../../components/Pages/BannerSlice.vue')
 const CodeSlice = () => import('../../components/Pages/CodeSlice.vue')
@@ -30,6 +36,8 @@ export default {
 	components: {
 		TextSlice,
 		TitleSlice,
+		WarningSlice,
+		TipsSlice,
 		FullWidthImage,
 		BannerSlice,
 		CodeSlice

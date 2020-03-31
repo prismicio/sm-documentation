@@ -3,7 +3,7 @@
 		<Container class="foor-container" justify="space-between">
 			<div class="logo">
 				<nuxt-link to="/">
-					<prismic-image v-if="menu.logo" :field="menu.logo" />
+					<prismic-image v-if="menu.logo_black" :field="menu.logo_black" />
 				</nuxt-link>
 				<nuxt-link to="/">
 					<span>

@@ -1,11 +1,9 @@
 <template>
-	<nav>
 		<ul>
 			<li v-for="menuLink in docs.menu_item" :key="menuLink.id">
 				<prismic-link :field="menuLink.link">{{ menuLink.link_label }}</prismic-link>
 			</li>
 		</ul>
-	</nav>
 </template>
 
 <script>
@@ -23,6 +21,8 @@ export default {
 @import '../../style/variables.scss';
 
 ul {
+	position: sticky;
+    top: 30px;
 	padding: 0;
 }
 li {
@@ -34,7 +34,7 @@ li {
 }
 a {
 	text-decoration: none;
-	color: #7b7979;
+	color: $black-primary;
 	&:active {
 		color: $black-secondary;
 	}
