@@ -66,7 +66,9 @@ main {
 *,
 *:before,
 *:after {
-	box-sizing: border-box;
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
 	margin: 0;
 }
 </style>

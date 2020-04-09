@@ -50,6 +50,7 @@ a {
 }
 
 .footerMenu {
+	background-color: #ffffff;
 	border-top: 1px solid #d3d2d2;
 	padding: 30px 0;
 	min-height: 80px;

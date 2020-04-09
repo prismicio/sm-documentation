@@ -1,0 +1,55 @@
+#video {
+  margin: 5vh auto 12vh auto;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  max-width: 1146px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  align-items: center;
+  background: #171717;
+  .video_player {
+    height: 360px;
+  }
+  h2 {
+    color: #fff;
+    margin-top: 0;
+  }
+  span{
+    text-decoration: underline;
+  }
+  a {
+    color: rgba(var(--primary), 1);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+    li {
+      font-size: 18px;
+      margin: 20px 0;
+      margin-left: 10px;
+      &:before {
+        position: relative;
+        top: 3px;
+        left: -10px;
+        content: "";
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        background-image: url("https://images.prismic.io/gatsbyjs-blog/504b85b1-fdca-4d5b-bffa-3f1557d106e3_check.svg?auto=compress,format");
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  #video {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+}

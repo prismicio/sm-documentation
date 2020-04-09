@@ -1,0 +1,250 @@
+#advantages {
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  .advantage-content{
+    .advantage-wrap {
+      padding-top: 20vh;
+      padding-right: 60px;
+      height: 56vh;
+      transition: opacity 400ms ease;
+      h3{
+        margin-top: 0.75rem;
+      }
+      img {
+        display: none;
+      }
+      .backend-logo{
+        display: block;
+        width: 87px;
+        height: 22px;
+      }
+      span {
+        font-family: "Source Code Pro", monospace;
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0 8px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+      &.low-opacity {
+        opacity: 0.15;
+      }
+    }
+  }
+  .advantage-wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 12vh;
+    height: 76vh;
+    .advantage-core {
+      position: relative;
+      height: 76vh;
+      background-color: #171717;
+      .advantage-illustration {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        max-width: none;
+        opacity: 0;
+        transition: opacity 400ms ease;
+        img {
+          height: 100%;
+        }
+        &.show {
+          opacity: 1;
+        }
+        /* small Layout */
+        .small-layout {
+          background: #f1f1f1;
+          height: 100%;
+          box-sizing: border-box;
+          padding: 25px;
+          align-items: center;
+          display: grid;
+          .wraper {
+            position: relative;
+            background-color: #fff;
+            box-sizing: border-box;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+          }
+          .illustration {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            display: block;
+            height: inherit;
+            transition: all 200ms ease;
+          }
+          .slice-1,.slice-2{
+            color: black;
+            padding: 5vh;
+            display: grid;
+            height: 200px;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 30px;
+            transition: all 200ms ease;
+          }
+          .slice-1 {
+            .illustration {
+              background-image: url("https://images.unsplash.com/photo-1558603668-6570496b66f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+            }
+          }
+          .slice-2 {
+            height: 20vh;
+            margin-top: -50px;
+            .content{
+              ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                li {
+                  padding: 4px 8px;
+                  background: #efefef;
+                  margin-bottom: 5px;
+                  border-radius: 2px;
+                  font-size: 10px;
+                }
+              }
+              h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                margin-bottom: 20px;
+                color: black;
+              }
+            }
+            .illustration {
+              background-image: url("https://images.unsplash.com/photo-1557592722-a0a649c8c5c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80");
+            }
+          }
+          .content {
+            transition: width 200ms ease;
+            width: 100%;
+            display: block;
+            .title {
+              display: block;
+              font-weight: bold;
+              font-size: 33px;
+              line-height: 100%;
+              margin-bottom: 10px;
+            }
+            .paragraph {
+              display: block;
+              opacity: 0.7;
+              font-weight: normal;
+              font-size: 10px;
+              line-height: 140%;
+              margin-bottom: 10px;
+            }
+            .button {
+              display: inline-block;
+              color: white;
+              background: #1b1b1b;
+              border: 1px solid #1b1b1b;
+              text-transform: uppercase;
+              min-width: 86px;
+              text-align: center;
+              font-weight: 500;
+              font-size: 9px;
+              line-height: 28px;
+              padding: 0 10px;
+              border-radius: 2px;
+            }
+          }
+        }
+        &.step-2 {
+          .slice-1 {
+            background-color: #1b1b1b;
+            color: white;
+            .button {
+              background: #1b1b1b;
+              border: 1px solid white;
+            }
+            .illustration {
+              transform: rotate(-5deg) skew(-5deg);
+              box-shadow: 9px 9px 0px #1b1b1b, 10px 10px 0px rgba(255, 255, 255, 1);
+            }
+          }
+          .slice-2 {
+            height: 20vh;
+            margin-top: 0px;
+            summary {
+              outline: none;
+            }
+            details {
+              div {
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+        &.step-3 {
+          .backend {
+            opacity: 1;
+            bottom: -30px;
+          }
+        }
+        .backend {
+          width: 100%;
+          max-width: 390px;
+          height: 100%;
+          max-height: 455px;
+          display: block;
+
+          position: absolute;
+          bottom: -50px;
+          left: -50px;
+          padding: 15px;
+          opacity: 0;
+          transition: all 200ms ease;
+          background: #fff;
+          background-image: url("https://images.prismic.io/slice-machine/8ba4c773-5b35-43c1-b041-fd7cb74eabfd_Frame+85.png?auto=compress,format");
+          background-size: cover;
+          border-radius: 2px;
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+/* Animation layout */
+@media (max-width: 1024px) {
+  #advantages {
+    grid-template-columns: 1fr;
+  }
+  .advantage-list {
+    display: none;
+  }
+  .advantage-content {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-gap: 50px;
+  }
+  .advantage-wrap {
+    padding-top: 0!important;
+    padding-right: inherit!important;
+    height: auto!important;
+    &.low-opacity{
+      opacity: 1!important;
+    }
+  }
+  .advantage-wrap img {
+    display: block!important;
+    max-height: none;
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 640px) {
+  .advantage-content {
+    grid-template-columns: 1fr;
+  }
+}

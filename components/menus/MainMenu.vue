@@ -133,6 +133,8 @@ export default {
 	height: 30px;
 	padding: 20px 0;
 	min-height: 80px;
+	z-index: 100;
+    position: relative;
 	#menu {
 		display: contents;
 	}
