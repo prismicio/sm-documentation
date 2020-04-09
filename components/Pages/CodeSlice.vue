@@ -11,6 +11,11 @@ import Body from '@/components/Body'
 
 export default {
 	name: 'CodeSlice',
+	data () {
+		return {
+			index: null
+		}
+	},
 	components: {
 		Body
 	},
@@ -24,8 +29,11 @@ export default {
 			required: true
 		}
 	},
+	created() {
+		this.index = Math.floor(Math.random() * 20)
+	},
 	methods: {
-		copyCommand() {
+		copyCommand(index) {
 			const commandToCopy = document.querySelector(
 				`#command-to-copy-${this.index}`
 			)
