@@ -1,7 +1,7 @@
 <template>
-	<div class="clipboard" @click.stop.prevent="copyCommand">
+	<div class="clipboard" @click.stop.prevent="copyCommand" >
 		<prismic-rich-text class="embed-text" :field="slice.primary.snippet" />
-		<img src="../../static/clipboard.svg" />
+		<span>{{ copyText }}</span>
 		<input :id="`command-to-copy-${index}`" type="hidden" :value="slice.primary.snippet[0].text" />
 	</div>
 </template>
@@ -13,7 +13,8 @@ export default {
 	name: 'CodeSlice',
 	data () {
 		return {
-			index: null
+			index: null,
+			copyText: null
 		}
 	},
 	components: {
@@ -23,17 +24,18 @@ export default {
 		slice: {
 			type: Object,
 			required: true
-		},
-		index: {
-			type: Number,
-			required: true
 		}
+		// index: {
+		// 	type: Number,
+		// 	required: true
+		// }
 	},
-	created() {
-		this.index = Math.floor(Math.random() * 20)
+	mounted() {
+		this.index = Math.floor(Math.random() * 10000)
+		this.copyText = 'Copy'
 	},
 	methods: {
-		copyCommand(index) {
+		copyCommand() {
 			const commandToCopy = document.querySelector(
 				`#command-to-copy-${this.index}`
 			)
@@ -42,8 +44,8 @@ export default {
 
 			try {
 				const successful = document.execCommand('copy')
-				const msg = successful ? 'successful' : 'unsuccessful'
-				alert('Command was copied ' + msg)
+				this.copyText = 'Copied'
+				setTimeout(() => this.copyText='Copy', 1000);
 			} catch (err) {
 				alert('Oops, unable to copy')
 			}
@@ -73,13 +75,6 @@ export default {
     	margin-left: -30px;
 	    margin-right: -30px;
     }
-	img {
-		display: none;
-		@include rwd(400) {
-			margin-left: 30px;
-			display: inline-block;
-		}
-	}
 	.embed-text {
 		text-align: left;
 		font-size: 13px;

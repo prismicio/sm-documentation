@@ -15,7 +15,7 @@
 			<!-- Banner component -->
 			<BannerSlice v-if="slice.slice_type === 'banner'" :slice="slice" />
 			<!-- Code Snippet component -->
-			<CodeSlice v-else-if="slice.slice_type === 'code'" :slice="slice" />
+			<CodeSlice v-else-if="slice.slice_type === 'code'" :slice="slice" :index="index" />
 		</div>
 	</section>
 </template>

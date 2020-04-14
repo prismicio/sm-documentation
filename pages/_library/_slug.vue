@@ -89,13 +89,9 @@ export default {
 				`http://sm-api.now.sh/api/library?lib=${params.library}`
 			)
 
-			const result = library.slices.filter(
-				slice => slice.slice_type === hyphenate(params.slug, true)
+			const result = Object.getOwnPropertyNames(library.slices).filter(
+				slice => slice === hyphenate(params.slug, true)
 			)
-
-			// const component = await $axios.$get(
-			// 	`https://github.com/prismicio/${params.library}/blob/master/src/slices/${params.slug}/index.vue`
-			// )
 
 			const readme = await $axios.$get(
 				`https://raw.githubusercontent.com/prismicio/${params.library}/master/src/slices/${params.slug}/README.md`

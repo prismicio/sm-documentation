@@ -50,7 +50,8 @@ export default {
 			}
 		],
     // https://prismic-nuxt.js.org/
-    '@nuxtjs/prismic'
+    '@nuxtjs/prismic',
+    '@nuxtjs/axios'
   ],
 
   prismic: {

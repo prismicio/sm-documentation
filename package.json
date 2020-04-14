@@ -12,6 +12,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.9.7",
     "@nuxtjs/prismic": "^1.1.0",
     "babel-runtime": "^6.26.0",
     "cookies": "^0.8.0",
