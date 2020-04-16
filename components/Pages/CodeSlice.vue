@@ -2,7 +2,7 @@
 	<div class="clipboard" @click.stop.prevent="copyCommand" >
 		<prismic-rich-text class="embed-text" :field="slice.primary.snippet" />
 		<span>{{ copyText }}</span>
-		<input :id="`command-to-copy-${index}`" type="hidden" :value="slice.primary.snippet[0].text" />
+		<textarea :id="`command-to-copy-${index}`" readonly :value="slice.primary.snippet[0].text" />
 	</div>
 </template>
 
@@ -78,6 +78,10 @@ export default {
 	.embed-text {
 		text-align: left;
 		font-size: 13px;
+	}
+	textarea {
+		left: -9999px;
+		position: absolute;  
 	}
 	&:hover {
 		background-color: #e2e2e2;

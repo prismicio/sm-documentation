@@ -45,6 +45,8 @@ export default {
 				`http://sm-api.now.sh/api/library?lib=${params.library}`
 			)
 
+			console.log(library)
+
 			const result = Object.entries(library.slices).filter(
 				([key, value]) => key === hyphenate(params.slug, true)
 			)
