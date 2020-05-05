@@ -52,6 +52,7 @@ nav {
 		display: inline-block;
 		grid-area: nav;
 		margin-left: 0.5rem;
+		border-right: 1px solid $grey-transparent;
 	}
 }
 main {
@@ -60,7 +61,6 @@ main {
 	@include lg {
 		grid-area: content;
 		padding: 5px 0 0 70px;
-		border-left: 1px solid $grey-transparent;
 	}
 }
 *,

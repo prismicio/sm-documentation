@@ -65,26 +65,19 @@ export default {
 	display: flex;
 	overflow-x: scroll;
 	justify-content: space-between;
-	background-color: #eeeeef;
+	background-color: $black-primary;
+	color: white;
 	border-radius: 5px;
 	padding: 20px;
 	margin: 20px 0;
 	cursor: pointer;
-	@include lg {
-		padding: 20px 30px;
-    	margin-left: -30px;
-	    margin-right: -30px;
-    }
 	.embed-text {
 		text-align: left;
 		font-size: 13px;
 	}
 	textarea {
 		left: -9999px;
-		position: absolute;  
-	}
-	&:hover {
-		background-color: #e2e2e2;
+		position: absolute;
 	}
 }
 </style>

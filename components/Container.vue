@@ -23,7 +23,7 @@ export default {
 .container {
 	width: 98%;
 	max-width: $container-width;
-	padding: 0 24px;
+	padding: 0;
 	flex-wrap: wrap;
 	@include lg {
 		width: 90%;
