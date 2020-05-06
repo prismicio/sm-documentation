@@ -65,15 +65,25 @@ export default {
 	display: flex;
 	overflow-x: scroll;
 	justify-content: space-between;
-	background-color: $black-primary;
-	color: white;
+	background-color: #292929;
+	color: #b7b7b7;
 	border-radius: 5px;
 	padding: 20px;
 	margin: 20px 0;
-	cursor: pointer;
 	.embed-text {
 		text-align: left;
 		font-size: 13px;
+	}
+	span{
+		background: rgba(255, 255, 255, 0.1);
+		color: white;
+		font-size: 12px;
+		padding: 2px 6px;
+		border-radius: 3px;
+		&:hover{
+			background: rgba(255, 255, 255, 0.2);
+			cursor: pointer;
+		}
 	}
 	textarea {
 		left: -9999px;
