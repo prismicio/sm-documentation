@@ -1,4 +1,5 @@
 @import '/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap');
 
 .nuxt-link-exact-active {
   color: $text-primary;
@@ -83,8 +84,25 @@ blockquote{
     margin-left: 0px;
     margin-right: 0px;
 }
+
+a{
+	color: #00e;
+}
+
 .docs {
 	main{
+		p{
+			.code-embed{
+				font-family: 'Source Code Pro', monospace;
+				font-weight: 600;
+				background: rgba(0, 0, 0, 0.05);
+				border: 1px solid rgba(0, 0, 0, 0.05);
+				border-radius: 3px;
+				color: #ab1a1a;
+				font-size: 13px;
+				padding: 2px 4px;
+    		}
+		}
 		ul, ol{
 				margin: 20px 0;
 			    font-size: 16px;

@@ -29,12 +29,6 @@ export default {
     	p{
     		font-size: 14px;
     		margin-bottom: 0;
-    		strong{
-    			background: rgba(0, 0, 0, 0.1);
-    			border-radius: 3px;
-    			padding: 2px 4px;
-    			font-weight: 600;
-    		}
     		&.title{
     			font-weight: 700;
     			margin-bottom: 10px;
