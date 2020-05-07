@@ -10,6 +10,10 @@
 			<WarningSlice v-if="slice.slice_type === 'warning'" :slice="slice" />
 			<!-- Tips Text slice component -->
 			<TipsSlice v-if="slice.slice_type === 'tips'" :slice="slice" />
+
+			<!-- Tips Text slice component -->
+			<AlternateTextVideo v-if="slice.slice_type === 'textvideo'" :slice="slice" />
+
 			<!-- Image component -->
 			<FullWidthImage v-if="slice.slice_type === 'image'" :slice="slice" />
 			<!-- Banner component -->
@@ -28,6 +32,7 @@ const TextSlice = () => import('../../components/Pages/TextSlice.vue')
 const TitleSlice = () => import('../../components/Pages/TitleSlice.vue')
 const WarningSlice = () => import('../../components/Pages/WarningSlice.vue')
 const TipsSlice = () => import('../../components/Pages/TipsSlice.vue')
+const AlternateTextVideo = () => import('../../components/Pages/AlternateTextVideo.vue')
 const FullWidthImage = () => import('../../components/Pages/FullWidthImage.vue')
 const BannerSlice = () => import('../../components/Pages/BannerSlice.vue')
 const CodeSlice = () => import('../../components/Pages/CodeSlice.vue')
@@ -42,6 +47,7 @@ export default {
 		TitleSlice,
 		WarningSlice,
 		TipsSlice,
+		AlternateTextVideo,
 		FullWidthImage,
 		BannerSlice,
 		CodeSlice,
