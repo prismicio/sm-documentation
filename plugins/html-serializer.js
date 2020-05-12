@@ -16,7 +16,7 @@ export default function (type, element, content, children) {
     const url = prismicDOM.Link.url(element.data, linkResolver)
 
     if (element.data.link_type === 'Document') {
-      result = `<nuxt-link to="${url}">${content}</nuxt-link>`
+      result = `<a href="${url}" data-nuxt-link>${content}</a>`
     } else {
       const target = element.data.target ? `target="'${element.data.target}'" rel="noopener"` : ''
       result = `<a href="${url}" ${target}>${content}</a>`
@@ -32,16 +32,26 @@ export default function (type, element, content, children) {
     if (element.linkTo) {
       const url = prismicDOM.Link.url(element.linkTo, linkResolver)
 
-      if (element.linkTo.link_type === 'Document') {
-        result = `<nuxt-link to="${url}">${result}</nuxt-link>`
+      if (element.data.link_type === 'Document') {
+        result = `<a href="${url}" data-nuxt-link>${result}</a>`
       } else {
-        const target = element.linkTo.target ? `target="${element.linkTo.target}" rel="noopener"` : ''
+        const target = element.data.target ? `target="'${element.data.target}'" rel="noopener"` : ''
         result = `<a href="${url}" ${target}>${result}</a>`
       }
     }
     const wrapperClassList = [element.label || '', 'block-img']
     result = `<p class="${wrapperClassList.join(' ')}">${result}</p>`
     return result
+  }
+
+  if (type === Elements.heading2) {
+    var id = element.text.replace(/\W+/g, '-').toLowerCase();
+    return '<h2 id="' + id + '">' + children.join('') + '</h2>';
+  }
+
+  if (type === Elements.heading3) {
+    var id = element.text.replace(/\W+/g, '-').toLowerCase();
+    return '<h3 id="' + id + '">' + children.join('') + '</h3>';
   }
 
   // Return null to stick with the default behavior for everything else

@@ -23,6 +23,7 @@
 			<!-- Next/Previous component -->
 			<ArticleControls v-else-if="slice.slice_type === 'article_controls'" :slice="slice" />
 		</div>
+		<TocSlice :slices="sliceContent" />
 	</section>
 </template>
 
@@ -36,8 +37,8 @@ const AlternateTextVideo = () => import('../../components/Pages/AlternateTextVid
 const FullWidthImage = () => import('../../components/Pages/FullWidthImage.vue')
 const BannerSlice = () => import('../../components/Pages/BannerSlice.vue')
 const CodeSlice = () => import('../../components/Pages/CodeSlice.vue')
-const ArticleControls = () =>
-	import('../../components/Pages/ArticleControls.vue')
+const ArticleControls = () => import('../../components/Pages/ArticleControls.vue')
+const TocSlice = () => import('../../components/Pages/TocSlice.vue')
 
 export default {
 	name: 'page',
@@ -51,7 +52,8 @@ export default {
 		FullWidthImage,
 		BannerSlice,
 		CodeSlice,
-		ArticleControls
+		ArticleControls,
+		TocSlice
 	},
 	async asyncData({ $prismic, params, error }) {
 		try {
