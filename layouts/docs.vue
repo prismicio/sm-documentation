@@ -61,9 +61,9 @@ main {
 	@include lg {
 		grid-area: content;
 		padding: 5px 0 0 40px;
-	}
-	section{
-		max-width: 650px;
+		section{
+			max-width: 650px;
+		}
 	}
 }
 *,

@@ -39,12 +39,18 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../style/variables.scss';
 	.introduction{
 		.grid{
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-    		grid-gap: 30px;
-
+			@include lg {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+	    		grid-gap: 30px;
+			}
+			video{
+				width: 100%;
+			}
+			grid-template-columns: 1fr;
     		&.links{
     			.grid-item{
     				border: 1px solid rgba(206, 210, 210, 0.4);
@@ -55,7 +61,8 @@ export default {
     				p,h3{margin: 0;}
 
     				a{
-    					text-decoration: none;
+    					text-decoration: underline;
+    					color: $black-primary;
     				}
 
     				h3{
