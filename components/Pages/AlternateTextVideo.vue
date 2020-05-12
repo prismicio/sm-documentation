@@ -4,7 +4,7 @@
 
 		<div class="grid video">
 			<div><prismic-rich-text :field="slice.primary.desc" /></div>
-			<div><video :src="slice.primary.video.url" controls /></div>
+			<div><prismic-embed :field="slice.primary.video"/></div>
 		</div>
 
 		<div class="grid links">
@@ -47,10 +47,20 @@ export default {
 				grid-template-columns: 1fr 1fr;
 	    		grid-gap: 30px;
 			}
-			video{
-				width: 100%;
-			}
 			grid-template-columns: 1fr;
+
+			&.video [data-oembed-provider="YouTube"]{
+				position: relative;
+				padding-bottom: 56.25%;
+				height: 0;
+				iframe{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
     		&.links{
     			.grid-item{
     				border: 1px solid rgba(206, 210, 210, 0.4);
