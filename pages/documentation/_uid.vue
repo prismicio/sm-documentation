@@ -7,6 +7,8 @@
 				<TextSlice v-if="slice.slice_type === 'text'" :slice="slice" />
 				<!-- Text slice component -->
 				<TitleSlice v-if="slice.slice_type === 'title'" :slice="slice" />
+				<!-- SubMenu slice component -->
+				<SubMenuSlice v-if="slice.slice_type === 'sub_menu'" :slice="slice" />
 				<!-- Warning Text slice component -->
 				<WarningSlice v-if="slice.slice_type === 'warning'" :slice="slice" />
 				<!-- Tips Text slice component -->
@@ -41,6 +43,7 @@ const BannerSlice = () => import('../../components/Pages/BannerSlice.vue')
 const CodeSlice = () => import('../../components/Pages/CodeSlice.vue')
 const ArticleControls = () => import('../../components/Pages/ArticleControls.vue')
 const TocSlice = () => import('../../components/Pages/TocSlice.vue')
+const SubMenuSlice = () => import('../../components/Pages/SubMenuSlice.vue')
 
 export default {
 	name: 'page',
@@ -55,12 +58,12 @@ export default {
 		BannerSlice,
 		CodeSlice,
 		ArticleControls,
-		TocSlice
+		TocSlice,
+		SubMenuSlice
 	},
 	async asyncData({ $prismic, params, error }) {
 		try {
 			const document = (await $prismic.api.getByUID('page', params.uid)).data
-
 			return {
 				// Page content
 				document,

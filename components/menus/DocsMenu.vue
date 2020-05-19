@@ -1,7 +1,12 @@
 <template>
 		<ul>
-			<li v-for="menuLink in docs.menu_item" :key="menuLink.id">
-				<prismic-link :field="menuLink.link">{{ menuLink.link_label }}</prismic-link>
+			<li v-for="docItem in docsItems" :key="docItem.field.id">
+				<prismic-link :field="docItem.field">{{ docItem.label }}</prismic-link>
+				<ul class="sub" v-if="docItem.subItems.length > 0">
+					<li v-for="subItem in docItem.subItems" :key="subItem.field.id">
+						<prismic-link :field="subItem.field">{{ subItem.label }}</prismic-link>
+					</li>
+				</ul>
 			</li>
 		</ul>
 </template>
@@ -10,8 +15,28 @@
 export default {
 	name: 'DocsMenu',
 	computed: {
-		docs() {
-			return this.$store.state.menus.docs
+		docsItems: function () {
+			return (this.$store.state.menus.docs.menu_item || []).map(docEntry => {
+				const subItems = (() => {
+					if(!(docEntry.link.data && docEntry.link.data.body)) return;
+
+					return docEntry.link.data.body.reduce((acc, slice) => {
+						const sliceSubItems = slice.items.map(menuItem => {
+							return {
+								field: menuItem.link_to_menu_item,
+								label: menuItem.link_label
+							};
+						});
+						return [...acc, ...sliceSubItems];
+					}, []);
+				})();
+
+				return {
+					field: docEntry.link,
+					label: docEntry.link_label,
+					subItems
+				};
+			});
 		}
 	}
 }
@@ -40,6 +65,19 @@ a {
 	}
 	&:hover {
 		color: $black-secondary;
+	}
+}
+.sub {
+	margin-left: 10px;
+	a {
+		font-size: 0.9em;
+		color: $black-secondary;
+		&:active {
+			color: $grey-primary;
+		}
+		&:hover {
+			color: $grey-primary;
+		}
 	}
 }
 </style>

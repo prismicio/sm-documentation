@@ -1,7 +1,27 @@
 export const actions = {
   nuxtServerInit({ commit }, { $prismic }) {
     try {
-      return $prismic.api.query($prismic.predicates.at('document.type', 'menu'))
+      const graphQuery = `{
+        menu {
+          menu_item {
+            link_label
+            link {
+              ...on page {
+                ...pageFields
+                body {
+                  ...on sub_menu {
+                    repeat {
+                      ...repeatFields
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }`
+
+      return $prismic.api.query($prismic.predicates.at('document.type', 'menu'), { graphQuery })
         .then(menus => {
           commit('menus/SET', {
             main: menus.results.find(e => e.uid === 'main_menu').data,
