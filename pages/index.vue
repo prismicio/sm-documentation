@@ -59,29 +59,29 @@
 			</div>
 		</header>
 
-		<div id="video" class="wrapper">
-		<section class="video_player">
-			<iframe
-			src="https://player.vimeo.com/video/398794337"
-			width="100%"
-			height="100%"
-			frameborder="0"
-			allow="autoplay; fullscreen"
-			allowfullscreen
-			>
-			</iframe>
-		</section>
-		<section>
-			<h2>Building pages with sections – made easy</h2>
-			<ul>
-			<li>Free library to get you started</li>
-			<li>100% customizable</li>
-			<li>Integrate your own components</li>
-			</ul>
-			<span
-			>Watch the video and get started with Slice Machine in just 2min</span
-			>
-		</section>
+		<div class="wrapper">
+			<div id="video">
+			<section>
+				<h2>See how Slice Machine works:</h2>
+				<p>(in roughly 2 minutes)</p>
+				<ul>
+				<li>Free library to get you started</li>
+				<li>Library that is 100% customizable </li>
+				<li>Integrate your own components</li>
+				</ul>
+			</section>
+			<section class="video_player">
+				<iframe
+				src="https://player.vimeo.com/video/398794337"
+				width="100%"
+				height="100%"
+				frameborder="0"
+				allow="autoplay; fullscreen"
+				allowfullscreen
+				>
+				</iframe>
+			</section>
+			</div>
 		</div>
 
 		<div id="advantages" class="wrapper">
@@ -285,6 +285,21 @@
 			</dl>
 			</section>
 		</div>
+		</div>
+
+		<div class="wrapper" id="faq">
+			<section>
+				<h2><img src="https://images.prismic.io/slice-machine/aac89f9b-7285-428f-8fb5-80269e535f50_ico-prismic.svg?auto=compress,format" />So wait... what’s Prismic?</h2>
+				<p>There’s every chance that you’ve made it this far without knowing what Prismic is. We’re slightly offended, but we’ll get over it.</p>
+				<p>Prismic is a Headless CMS that offers unlimited custom types, API calls, and a bunch of other great things. You should really check it out.</p>
+				<a href="#">Learn more →</a>
+			</section>
+
+			<section>
+				<h2><img src="https://images.prismic.io/slice-machine/536e59b7-8fd0-4c0a-87a7-4821a0210248_ico-slicemachine.svg?auto=compress,format" />Why Slice Machine?</h2>
+				<p>API-based CMS’s have created a gap between the components that you use and your data and we are trying to build that gap with Slices. Slices are how we refer to the components that you create in the Prismic interface.</p>
+				<p>We wanted to find a way to take Slices to the next level and to allow developers to adopt a totally component-based approach to how they build websites and create pages.</p>
+			</section>
 		</div>
 
 		<div class="wrapper">

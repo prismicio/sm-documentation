@@ -1,11 +1,10 @@
 #video {
   margin: 5vh auto 12vh auto;
-  padding-top: 3em;
-  padding-bottom: 3em;
+  padding: 80px;
   max-width: 1146px;
   height: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 4fr;
   grid-gap: 50px;
   align-items: center;
   background: #171717;
@@ -16,8 +15,8 @@
     color: #fff;
     margin-top: 0;
   }
-  span{
-    text-decoration: underline;
+  p{
+    margin-bottom: 2em;
   }
   a {
     color: rgba(var(--primary), 1);
@@ -48,8 +47,15 @@
 }
 @media (max-width: 1024px) {
   #video {
+    padding: 3em;
     grid-template-columns: 1fr;
   }
 }
 @media (max-width: 640px) {
+  #video{
+    grid-gap: 0px;
+    .video_player {
+      height: 250px;
+    }
+  }
 }
