@@ -3,11 +3,9 @@
         <h5>On this page</h5>
         <ul>
             <li v-for="([anchor, text], index) in sections" :key="`section-${index}`">
-                <div class="headingSection">
-                    <a :href="`#${anchor}`">
-                        {{ text }}
-                    </a>
-                </div>
+                <a :href="`#${anchor}`">
+                    {{ text }}
+                </a>
             </li>
         </ul>
     </section>
