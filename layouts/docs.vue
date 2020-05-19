@@ -42,7 +42,7 @@ export default {
 		padding-bottom: 70px;
 		grid-template-areas: 'nav content';
 		grid-template-columns: 200px minmax(200px, 1fr);
-		grid-gap: 10px;
+		grid-gap: 40px;
 	}
 }
 nav {
@@ -60,10 +60,7 @@ main {
 	padding: 44px 0 44px 0;
 	@include lg {
 		grid-area: content;
-		padding: 5px 0 0 40px;
-		section{
-			max-width: 650px;
-		}
+		padding: 5px 0 0 0;
 	}
 }
 *,

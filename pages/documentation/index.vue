@@ -1,15 +1,13 @@
 <template>
-	<section>
+	<section class="wrapper">
 		<!-- Slice section template -->
 		<div v-for="(slice, index) in sliceContent" :key="'slice-' + index">
 			<!-- Text slice component -->
 			<TextSlice v-if="slice.slice_type === 'text'" :slice="slice" />
 			<!-- Title slice component -->
 			<TitleSlice v-if="slice.slice_type === 'title'" :slice="slice" />
-
 			<!-- Tips Text slice component -->
 			<AlternateTextVideo v-if="slice.slice_type === 'textvideo'" :slice="slice" />
-
 			<!-- Warning Text slice component -->
 			<WarningSlice v-if="slice.slice_type === 'warning'" :slice="slice" />
 			<!-- Tips Text slice component -->
@@ -68,5 +66,8 @@ export default {
 <style lang="scss" scoped>
 img {
 	max-width: 100%;
+}
+section.wrapper{
+	max-width: 650px;
 }
 </style>
