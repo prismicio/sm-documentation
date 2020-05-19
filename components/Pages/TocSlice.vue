@@ -2,17 +2,11 @@
     <section class="table-of-content">
         <h5>On this page</h5>
         <ul>
-            <li v-for="(slice, index) in slices" :key="`slice-${index}`">
-                <div v-if="slice.slice_type === 'title'">
-                    <div v-for="(element, index) in slice.primary.title" :key="`element-${index}`">
-                        <div v-if="element.type === 'heading2'">
-                            <div class="headingSection">
-                                <a :href="`#${element.text.replace(/\W+/g, '-').toLowerCase()}`">
-                                    {{ element.text }}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <li v-for="([anchor, text], index) in sections" :key="`section-${index}`">
+                <div class="headingSection">
+                    <a :href="`#${anchor}`">
+                        {{ text }}
+                    </a>
                 </div>
             </li>
         </ul>
@@ -27,7 +21,19 @@ export default {
 			type: Array,
 			required: true
 		}
-	}
+    },
+    computed: {
+        sections: function () {
+            const buildAnchor = (text) => text.replace(/\W+/g, '-').toLowerCase()
+            return this.slices
+                .map((slice) => {
+                    if(!(slice.slice_type === 'title' && slice.primary.title)) return;
+                    const heading = slice.primary.title.find(elem => elem.type === 'heading2');
+                    if(heading) return [buildAnchor(heading.text), heading.text];
+                })
+                .filter(e => !!e)
+        }
+    }
 }
 </script>
 
