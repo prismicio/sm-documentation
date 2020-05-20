@@ -22,10 +22,10 @@ export default function (doc) {
   if (doc.uid === 'documentation') {
     return `/${doc.uid}`
   }
-  if (doc.tags.includes('deep-learning')) {
-    return `/documentation/${doc.uid}`
-  }
-  if (doc.tags.includes('tutorials')) {
+  if (
+    doc.tags.includes('tutorials') ||
+    doc.tags.includes('deep_learning')
+  ) {
     return `/documentation/${doc.uid}`
   }
   return '/not-found'
