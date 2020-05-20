@@ -24,7 +24,7 @@ export default function (doc) {
   }
   if (
     doc.tags.includes('tutorials') ||
-    doc.tags.includes('deeplearning')
+    doc.tags.includes('deep-learning')
   ) {
     return `/documentation/${doc.uid}`
   }
