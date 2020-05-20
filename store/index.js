@@ -3,6 +3,7 @@ export const actions = {
     try {
       const graphQuery = `{
         menu {
+          ...menuFields
           menu_item {
             link_label
             link {
