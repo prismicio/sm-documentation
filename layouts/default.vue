@@ -2,7 +2,7 @@
 	<div>
 		<MainMenu />
 		<nuxt />
-		<FooterMenu />
+		<FooterMenu theme="dark" />
 	</div>
 </template>
 

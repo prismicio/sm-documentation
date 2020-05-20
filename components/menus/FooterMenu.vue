@@ -1,9 +1,10 @@
 <template>
-	<div class="footerMenu">
+	<div :class="`footerMenu ${theme}`">
 		<Container class="foor-container" justify="space-between">
 			<div class="logo">
 				<nuxt-link to="/">
-					<prismic-image v-if="menu.logo_black" :field="menu.logo_black" />
+					<prismic-image v-if="theme == 'light' && menu.logo_black" :field="menu.logo_black" />
+					<prismic-image v-if="theme == 'dark' && menu.logo" :field="menu.logo" />
 				</nuxt-link>
 				<nuxt-link to="/">
 					<span>
@@ -30,6 +31,15 @@ export default {
 	components: {
 		Container
 	},
+	props: {
+		theme: {
+			type: String,
+			required: true,
+      validator: function (value) {
+        return ['dark', 'light'].indexOf(value) !== -1
+      }
+    }
+	},
 	computed: {
 		menu() {
 			return this.$store.state.menus.main
@@ -50,8 +60,35 @@ a {
 }
 
 .footerMenu {
-	background-color: #ffffff;
-	border-top: 1px solid #d3d2d2;
+
+	&.dark {
+		background-color: $black-primary;
+		border-top: 1px solid $grey-primary;
+		a {
+			color: $grey-secondary;
+			&:visited {
+				color: #FFFFFF;
+			}
+			&:hover {
+				color: #FFFFFF;
+			}
+		}
+	}
+
+	&.light {
+		background-color: #ffffff;
+		border-top: 1px solid #d3d2d2;
+		a {
+			color: $black-primary;
+			&:visited {
+				color: $black-primary;
+			}
+			&:hover {
+				color: $black-secondary;
+			}
+		}
+	}
+
 	padding: 30px 0;
 	min-height: 80px;
 	.foor-container {
@@ -86,13 +123,6 @@ a {
 	a {
 		display: contents;
 		text-decoration: none;
-		color: $black-primary;
-		&:visited {
-			color: $black-primary;
-		}
-		&:hover {
-			color: $black-secondary;
-		}
 	}
 }
 </style>

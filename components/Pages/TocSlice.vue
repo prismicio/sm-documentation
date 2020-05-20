@@ -1,5 +1,5 @@
 <template>
-    <section class="table-of-content">
+    <section v-if="slices.length" class="table-of-content">
         <h5>On this page</h5>
         <ul>
             <li v-for="([anchor, text], index) in sections" :key="`section-${index}`">

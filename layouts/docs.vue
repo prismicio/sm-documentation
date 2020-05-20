@@ -11,7 +11,7 @@
 				</main>
 			</div>
 		</Body>
-		<FooterMenu />
+		<FooterMenu theme="light" />
 	</div>
 </template>
 
