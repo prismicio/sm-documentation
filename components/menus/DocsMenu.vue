@@ -68,15 +68,21 @@ a {
 	}
 }
 .sub {
-	margin-left: 10px;
-	a {
-		font-size: 0.9em;
-		color: $black-secondary;
-		&:active {
-			color: $grey-primary;
-		}
-		&:hover {
-			color: $grey-primary;
+	border-left: 1px solid rgba(206, 210, 210, 0.4);
+	margin: 10px 0 0;
+	padding: 0 10px;
+	font-size: 14px;
+	li{
+		padding: 6px 0;
+		a {
+			font-size: 0.9em;
+			color: $black-secondary;
+			&:active {
+				color: $grey-primary;
+			}
+			&:hover {
+				color: $grey-primary;
+			}
 		}
 	}
 }
