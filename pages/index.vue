@@ -19,7 +19,7 @@
 						/> Prismic</b>
 					</div>
 					<div class="CTA">
-						<a class="how_it_work" href="#video"><img src="https://images.prismic.io/slice-machine/6a78160b-7154-4a6d-8570-61ac208b6859_play-button.svg?auto=compress,format" />See how it works</a> <a class="get_started" href="#">Get started →</a>
+						<a class="how_it_work" href="#video"><img src="https://images.prismic.io/slice-machine/6a78160b-7154-4a6d-8570-61ac208b6859_play-button.svg?auto=compress,format" />See how it works</a> <a class="get_started" href="/documentation">Get started →</a>
 					</div>
 					<!-- <form
 						class="beta-access"
@@ -298,7 +298,7 @@
 				<h2><img src="https://images.prismic.io/slice-machine/aac89f9b-7285-428f-8fb5-80269e535f50_ico-prismic.svg?auto=compress,format" />So wait... what’s Prismic?</h2>
 				<p>There’s every chance that you’ve made it this far without knowing what Prismic is. We’re slightly offended, but we’ll get over it.</p>
 				<p>Prismic is a Headless CMS that offers unlimited custom types, API calls, and a bunch of other great things. You should really check it out.</p>
-				<a href="#">Learn more →</a>
+				<a href="https://prismic.io/">Learn more →</a>
 			</section>
 
 			<section>
@@ -310,8 +310,8 @@
 
 		<div class="wrapper">
 		<div id="call-to-action">
-			<h3>Get early access to Slice Machine</h3>
-			<p>Signup for the private beta and test the tool early:</p>
+			<h3>Slice Machine Newsletter</h3>
+			<p>Get the latest Slice Machine news to your inbox, curated by the core team.</p>
 			<form
 			class="beta-access"
 			action="https://prismic.us4.list-manage.com/subscribe/post?u=17c9d70fcbff72b9888bf2b9e&amp;id=213082902f"
@@ -340,7 +340,7 @@
 			</div>
 			<input
 				type="submit"
-				value="Request Beta Access"
+				value="Subscribe"
 				name="subscribe"
 				id="mc-embedded-subscribe"
 			/>

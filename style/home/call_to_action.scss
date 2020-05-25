@@ -42,14 +42,7 @@
   }
   @media (max-width: 1024px) {
     form.beta-access input[type="email"],form.beta-access input[type="submit"]{
-      max-width: 100% !important;
-      width: 100%;
-      margin: 10px 0;
-    }
-  }
-  @media (max-width: 640px) {
-    form.beta-access input[type="email"],
-    form.beta-access input[type="submit"] {
+      box-sizing: border-box;
       max-width: 100% !important;
       width: 100%;
       margin: 10px 0;
