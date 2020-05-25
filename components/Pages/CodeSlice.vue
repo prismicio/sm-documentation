@@ -70,9 +70,14 @@ export default {
 	position: relative;
 	.copy {
 		position: absolute;
-		top: 10px;
-		right: 10px;
-		z-index: 1;
+	    top: 10px;
+	    padding: 7px 10px;
+	    background: #ffffff1f;
+	    border-radius: 2px;
+	    border: none;
+	    color: #ffffff;
+	    right: 10px;
+	    z-index: 1;
 	}
 }
 /*
@@ -133,7 +138,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 2.5em 1em 1em 1em;
+	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
 	border-radius: 0.3em;
