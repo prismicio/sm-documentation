@@ -22,12 +22,13 @@ export const actions = {
         }
       }`
 
-      return $prismic.api.query($prismic.predicates.at('document.type', 'menu'), { graphQuery })
+      return $prismic.api.query($prismic.predicates.any('document.type', ['menu', 'footer_menu']), { graphQuery })
         .then(menus => {
           commit('menus/SET', {
             main: menus.results.find(e => e.uid === 'main_menu').data,
             side: menus.results.find(e => e.uid === 'side_menu').data,
-            docs: menus.results.find(e => e.uid === 'docs_menu').data
+            docs: menus.results.find(e => e.uid === 'docs_menu').data,
+            foot: menus.results.find(e => e.uid === 'footer_menu').data
           })
         })
     } catch (e) {

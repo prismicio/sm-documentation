@@ -8,14 +8,22 @@
 				</nuxt-link>
 				<nuxt-link to="/">
 					<span>
-						<b>Slicemachine</b> by prismic
+					{{ menu.title_tag }}
 					</span>
 				</nuxt-link>
 			</div>
+			<nuxt-link to="/">
+				<span>
+				{{ menu.address }}
+				</span>
+			</nuxt-link>
 			<nav>
-				<ul>
-					<li v-for="menuLink in menu.menu_item" :key="menuLink.id">
-						<prismic-link :field="menuLink.link">{{ menuLink.link_label }}</prismic-link>
+				<ul v-for="(column, index) in menu.body" :key="'column-' + index">
+					<li class="prominent">
+						<prismic-link :field="column.primary.prominent_link">{{ column.primary.prominent_link_label }}</prismic-link>
+					</li>
+					<li class="secondary" v-for="menuLink in column.items" :key="menuLink.id">
+						<prismic-link :field="menuLink.secondary_link">{{ menuLink.secondary_link_label }}</prismic-link>
 					</li>
 				</ul>
 			</nav>
@@ -42,7 +50,7 @@ export default {
 	},
 	computed: {
 		menu() {
-			return this.$store.state.menus.main
+			return this.$store.state.menus.foot
 		}
 	}
 }
