@@ -1,21 +1,35 @@
 <template>
-	<vue-code-highlight>
-{{codeText}}
-	</vue-code-highlight>
+	<div class="code-wrapper">
+		<vue-code-highlight>{{codeText}}</vue-code-highlight>
+		<button class="copy"
+			type="button"
+			v-clipboard:copy="codeText"
+			v-clipboard:success="onCopy">
+			{{buttonValue}}
+		</button>
+	</div>
 </template>
 
 <script>
-import Body from '@/components/Body'
 import { RichText } from 'prismic-dom';
+import Vue from 'vue'
+import VueClipboard from 'vue-clipboard2'
 import { component as VueCodeHighlight } from 'vue-code-highlight';
+import Body from '@/components/Body'
 
+Vue.use(VueClipboard)
+
+const ButtonValue = {
+	Copy: 'copy',
+	Copied: 'copied!'
+}
 
 export default {
 	name: 'CodeSlice',
 	data () {
 		return {
 			index: null,
-			copyText: null
+			buttonValue: ButtonValue.Copy
 		}
 	},
 	components: {
@@ -27,6 +41,21 @@ export default {
 			return RichText.asText(this.slice.primary.snippet);
 		}
 	},
+	methods: {
+		toggleButton() {
+			if(this.buttonValue === ButtonValue.Copy) {
+				this.buttonValue = ButtonValue.Copied;
+			} else {
+				this.buttonValue = ButtonValue.Copy;
+			}
+		},
+		onCopy: function (e) {
+			this.toggleButton();
+			setTimeout(() => {
+				this.toggleButton();
+			}, 3000);
+    }
+	},
 	props: {
 		slice: {
 			type: Object,
@@ -37,6 +66,15 @@ export default {
 </script>
 
 <style lang="scss">
+.code-wrapper {
+	position: relative;
+	.copy {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 1;
+	}
+}
 /*
 SOLARIZED HEX
 --------- -------
@@ -95,7 +133,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 0 1em;
+	padding: 2.5em 1em 1em 1em;
 	margin: .5em 0;
 	overflow: auto;
 	border-radius: 0.3em;
