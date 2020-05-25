@@ -9,7 +9,19 @@
 					<h1>
 						Devs make the parts, users make the websites.
 					</h1>
-					<form
+					<div class="forwho">
+						For <b class="nuxtjs"><img
+						src="https://fr.nuxtjs.org/logos/nuxt-white.svg"
+						alt="NuxtJS"
+						/> NuxtJS</b> & <b class="prismic"><img
+						src="https://images.prismic.io/slice-machine/89d1da3c-c569-41ee-84e7-b650e84043f7_prismic-logo.svg?auto=compress,format"
+						alt="Prismic"
+						/> Prismic</b>
+					</div>
+					<div class="CTA">
+						<a class="how_it_work" href="#video"><img src="https://images.prismic.io/slice-machine/6a78160b-7154-4a6d-8570-61ac208b6859_play-button.svg?auto=compress,format" />See how it works</a> <a class="get_started" href="#">Get started →</a>
+					</div>
+					<!-- <form
 						class="beta-access"
 						action="https://prismic.us4.list-manage.com/subscribe/post?u=17c9d70fcbff72b9888bf2b9e&amp;id=213082902f"
 						method="post"
@@ -41,14 +53,7 @@
 						name="subscribe"
 						id="mc-embedded-subscribe"
 						/>
-					</form>
-					<div class="nuxt">
-						For <b>NuxtJS</b>
-						<img
-						src="https://fr.nuxtjs.org/logos/nuxt-white.svg"
-						alt="NuxtJS"
-						/>
-					</div>
+					</form> -->
 					</div>
 				</div>
 				</section>
@@ -283,6 +288,7 @@
 				used when and where needed.
 				</dd>
 			</dl>
+			<p class="customizable">100% Customizable</p>
 			</section>
 		</div>
 		</div>

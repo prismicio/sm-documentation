@@ -31,12 +31,18 @@ header {
         border-radius: 4px;
       }
     }
-    .nuxt {
+    .forwho {
       margin-top: 30px;
       font-weight: 200;
       font-size: 14px;
       img {
         width: 18px;
+      }
+      .prismic{
+        img{
+          position: relative;
+          top: 3px;
+        }
       }
     }
     .illustration {
@@ -57,6 +63,43 @@ header {
         transition: background-image 200ms ease;
         &:hover {
           background-image: url("https://images.prismic.io/slice-machine/9f3a1ee7-9313-427c-b141-efcf18a3ec15_header-illu-hover.png?auto=compress,format");
+        }
+      }
+    }
+    .CTA{
+      margin-top: 30px;
+      a{
+        display: inline-block;
+        text-decoration: none;
+        line-height: 60px;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 0 30px;
+        border-radius: 2px;
+        box-sizing: border-box;
+        height: 60px;
+      }
+      .how_it_work{
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        background: transparent;
+        margin-right: 15px;
+        color: white;
+        img{
+          width: 20px;
+          position: relative;
+          margin-right: 10px;
+          top: 4px;
+        }
+        &:hover {
+          border: 1px solid rgba(255, 255, 255, 1);
+        }
+      }
+      .get_started{
+        background: white;
+        margin-right: 15px;
+        color: black;
+        &:hover {
+          background: rgba(255,255,255, 0.9);
         }
       }
     }
@@ -82,7 +125,7 @@ header {
             box-sizing: border-box;
             border-radius: 2px;
             margin-right: 15px;
-            font-size: 16px;
+            font-size: 15px;
             padding: 0 15px;
             color: white;
             height: 60px;
@@ -96,8 +139,8 @@ header {
           input[type="submit"] {
             background: white;
             border-radius: 2px;
-            font-weight: 500;
-            font-size: 16px;
+            font-weight: 600;
+            font-size: 15px;
             padding: 0 15px;
             color: black;
             border: none;
@@ -115,6 +158,15 @@ header {
   header .hero {
     grid-template-columns: 1fr;
     min-height: 100vh;
+    .CTA{
+      a{
+        display: block;
+        margin-right: 0!important;
+        &.how_it_work{
+          margin-bottom: 20px;
+        }
+      }
+    }
     .illustration {
       display: none;
     }

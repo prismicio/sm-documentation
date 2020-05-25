@@ -152,6 +152,9 @@ export default {
 		a {
 			color: #fff!important;
 			font-size: 13px;
+			span{
+				font-weight: normal;
+			}
 		}
 	}
 	.horizontal-nav {
