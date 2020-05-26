@@ -5,7 +5,7 @@
 				<section class="hero_form">
 				<div class="content">
 					<div>
-					<span>Private Beta Release</span>
+					<span>Beta Release</span>
 					<h1>
 						Devs make the parts, users make the websites.
 					</h1>
@@ -204,11 +204,7 @@
 
 			<div class="testimonial_message">
 				<p>
-				“I built the Prismic Slices to be a resilient foundation for your
-				projects. They are progressively enhanced, cross-browser
-				compatible, responsive, accessible, and customizable components,
-				created with semantic markup, modern CSS, JavaScript, and lots of
-				love 💜 .”
+				“I built this library of components to be a resilient foundation for your projects. They are progressively enhanced, cross-browser compatible, responsive, accessible, and customizable components, created with semantic markup, modern CSS, JavaScript, and lots of love 💜 .”
 				</p>
 				<div>
 				<strong><a href="https://www.sarasoueidan.com/">Sara Soueidan</a></strong>
