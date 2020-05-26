@@ -36,6 +36,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/prism'
   ],
 
   /*
@@ -70,6 +71,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
+   transpile: ['prism-es6'],
     extend(config, ctx) {
       // to transform link with <nuxt-link> for the htmlSerializer
       config.resolve.alias['vue'] = 'vue/dist/vue.common'
