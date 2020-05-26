@@ -1,6 +1,6 @@
 <template>
 	<div class="code-wrapper">
-		<vue-code-highlight>{{codeText}}</vue-code-highlight>
+		<pre class="language-javascript"><code>{{codeText}}</code></pre>
 		<button class="copy"
 			type="button"
 			v-clipboard:copy="codeText"
@@ -14,8 +14,8 @@
 import { RichText } from 'prismic-dom';
 import Vue from 'vue'
 import VueClipboard from 'vue-clipboard2'
-import { component as VueCodeHighlight } from 'vue-code-highlight';
 import Body from '@/components/Body'
+import Prism from '@/plugins/prism'
 
 Vue.use(VueClipboard)
 
@@ -33,13 +33,16 @@ export default {
 		}
 	},
 	components: {
-		Body,
-		VueCodeHighlight
+		Body
 	},
 	computed: {
 		codeText: function() {
 			return RichText.asText(this.slice.primary.snippet);
-		}
+		},
+		languageClass: () => 'language-javascript'
+	},
+	mounted() {
+		Prism.highlightAll()
 	},
 	methods: {
 		toggleButton() {
