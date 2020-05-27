@@ -42,6 +42,11 @@ export default {
     '@/plugins/prism'
   ],
 
+  buildModules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-43699356-5'
+    }]
+  ],
   /*
   ** Nuxt.js modules
   */

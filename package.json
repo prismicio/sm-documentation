@@ -24,6 +24,7 @@
     "vue-markdown": "^2.2.4"
   },
   "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.3.0",
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.2",
     "sass-loader": "^8.0.2",
