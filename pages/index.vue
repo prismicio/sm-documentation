@@ -299,7 +299,7 @@
 
 			<section>
 				<h2><img src="https://images.prismic.io/slice-machine/536e59b7-8fd0-4c0a-87a7-4821a0210248_ico-slicemachine.svg?auto=compress,format" />Why Slice Machine?</h2>
-				<p>API-based CMS’s have created a gap between the components that you use and your data and we are trying to build that gap with Slices. Slices are how we refer to the components that you create in the Prismic interface.</p>
+				<p>API-based CMS’s have created a gap between the components that you use and your data and we are trying to bridge that gap with Slices. Slices are how we refer to the components that you create in the Prismic interface.</p>
 				<p>We wanted to find a way to take Slices to the next level and to allow developers to adopt a totally component-based approach to how they build websites and create pages.</p>
 			</section>
 		</div>
