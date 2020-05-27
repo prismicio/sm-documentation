@@ -77,13 +77,12 @@
 			</section>
 			<section class="video_player">
 				<iframe
-				src="https://player.vimeo.com/video/398794337"
-				width="100%"
-				height="100%"
-				frameborder="0"
-				allow="autoplay; fullscreen"
-				allowfullscreen
-				>
+					width="100%"
+					height="100%"
+					src="https://www.youtube.com/embed/A8_TY8FZ9Bg"
+					frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen>
 				</iframe>
 			</section>
 			</div>
