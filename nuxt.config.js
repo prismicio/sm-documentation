@@ -5,11 +5,14 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Nuxt + Prismic',
+    title: 'Slice Machine - ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt + Prismic showcase' }
+      { hid: 'description', name: 'description', content: 'Devs make the parts, users make the websites.' },
+      { property: 'og:title', content: 'Slice Machine'},
+      { property: 'og:description', content: 'Devs make the parts, users make the websites.'},
+      { property: 'og:image', content: 'https://images.prismic.io/slice-machine/c638562a-dfb5-4477-baa2-6046e0964520_Slicemachine-social-card.png?auto=compress,format' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'https://images.prismic.io/slice-machine/f8c31810-7dda-488b-a487-60ee694d6ffc_Favicon.png?auto=compress,format' },
