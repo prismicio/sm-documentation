@@ -61,6 +61,14 @@ export default {
 				useCache: false
 			}
 		],
+    // hotjar
+    [
+      '@netsells/nuxt-hotjar',
+      {
+        id: '1748750',
+        sv: '6'
+      }
+    ],
     // https://prismic-nuxt.js.org/
     '@nuxtjs/prismic',
     '@nuxtjs/axios'

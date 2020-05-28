@@ -12,6 +12,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@netsells/nuxt-hotjar": "^0.1.2",
     "@nuxtjs/axios": "^5.9.7",
     "@nuxtjs/prismic": "^1.2.1",
     "babel-runtime": "^6.26.0",
