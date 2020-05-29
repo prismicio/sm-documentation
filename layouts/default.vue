@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="announcement-callout">🚀 Slice machine is out,  Read the announcement - <a href="https://prismic.io/blog/announcing-slice-machine">Learn More →</a></div>
+		<div class="announcement-callout">🚀 Slice machine is out, <a href="https://prismic.io/blog/announcing-slice-machine">Read the announcement →</a></div>
 		<MainMenu />
 		<nuxt />
 		<FooterMenu theme="dark" />
