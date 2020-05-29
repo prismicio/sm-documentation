@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<div class="announcement-callout">🚀 Slice machine is out,  Read the announcement - <a href="https://prismic.io/blog/announcing-slice-machine">Learn More →</a></div>
 		<MainMenu />
 		<nuxt />
 		<FooterMenu theme="dark" />
@@ -27,5 +28,22 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+}
+.announcement-callout{
+	background: #202020;
+	color: white;
+	width: 100%;
+	padding: 12px 0;
+	min-height: 50px;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+}
+.announcement-callout a{
+	color: #FFDBA2;
+	text-decoration: none;
+}
+.announcement-callout a:hover{
+	text-decoration: underline;
 }
 </style>

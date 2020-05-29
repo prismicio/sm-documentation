@@ -5,7 +5,6 @@
 				<section class="hero_form">
 				<div class="content">
 					<div>
-					<span class="announcement-callout">Slice machine is out,  Read the announcement - <a href="https://prismic.io/blog/announcing-slice-machine">Learn More →</a></span>
 					<span>Beta Release</span>
 					<h1>
 						Devs make the parts, users make the websites.
