@@ -2,7 +2,7 @@
 		<ul>
 			<li v-for="docItem in docsItems" :key="docItem.field.id">
 				<prismic-link :field="docItem.field">{{ docItem.label }}</prismic-link>
-				<ul class="sub" v-if="docItem.subItems.length > 0">
+				<ul class="sub" v-if="docItem.subItems && docItem.subItems.length > 0">
 					<li v-for="subItem in docItem.subItems" :key="subItem.field.id">
 						<prismic-link :field="subItem.field">{{ subItem.label }}</prismic-link>
 					</li>
