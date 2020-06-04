@@ -104,8 +104,6 @@ cyan      #2aa198
 green     #859900
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #fff; /* base00 */

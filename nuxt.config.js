@@ -18,8 +18,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: 'https://images.prismic.io/slice-machine/f8c31810-7dda-488b-a487-60ee694d6ffc_Favicon.png?auto=compress,format' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
     ]
