@@ -13,9 +13,6 @@ export default function (doc) {
   if (doc.type === 'component_library') {
     return `/component-library`
   }
-  if (doc.uid === 'contributing') {
-    return `/${doc.uid}`
-  }
   if (doc.uid === 'about') {
     return `/${doc.uid}`
   }
