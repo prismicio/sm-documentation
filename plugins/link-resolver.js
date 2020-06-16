@@ -14,7 +14,7 @@ export default function (doc) {
     return `/component-library`
   }
   if (doc.uid === 'contributing') {
-    return '/wip'
+    return `/${doc.uid}`
   }
   if (doc.uid === 'about') {
     return `/${doc.uid}`
