@@ -21,6 +21,8 @@
 				<BannerSlice v-if="slice.slice_type === 'banner'" :slice="slice" />
 				<!-- Code Snippet component -->
 				<CodeSlice v-else-if="slice.slice_type === 'code'" :slice="slice" />
+				<!-- Video component -->
+				<VideoSlice v-else-if="slice.slice_type === 'video'" :slice="slice" />
 				<!-- Next/Previous component -->
 				<ArticleControls v-else-if="slice.slice_type === 'article_controls'" :slice="slice" />
 			</div>
@@ -44,6 +46,7 @@ const CodeSlice = () => import('../../components/Pages/CodeSlice.vue')
 const ArticleControls = () => import('../../components/Pages/ArticleControls.vue')
 const TocSlice = () => import('../../components/Pages/TocSlice.vue')
 const SubMenuSlice = () => import('../../components/Pages/SubMenuSlice.vue')
+const VideoSlice = () => import('../../components/Pages/VideoSlice.vue')
 
 export default {
 	name: 'page',
@@ -59,7 +62,8 @@ export default {
 		CodeSlice,
 		ArticleControls,
 		TocSlice,
-		SubMenuSlice
+		SubMenuSlice,
+		VideoSlice
 	},
 	async asyncData({ $prismic, params, error }) {
 		try {
