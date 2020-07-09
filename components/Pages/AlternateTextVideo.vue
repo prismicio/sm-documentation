@@ -1,10 +1,10 @@
 <template>
 	<div class="introduction">
-		<prismic-rich-text :field="slice.primary.title" />
-
-		<div class="grid video">
-			<div><prismic-rich-text :field="slice.primary.desc" /></div>
-			<div><prismic-embed :field="slice.primary.video"/></div>
+		<prismic-rich-text v-if="richTextExists(slice.primary.title)" :field="slice.primary.title" />
+		
+		<div class="grid video" v-if="videoExists(slice.primary.video)">
+			<div><prismic-rich-text :v-if="slice.primary.desc" :field="slice.primary.desc" /></div>
+			<div><prismic-embed :v-if="slice.primary.video" :field="slice.primary.video"/></div>
 		</div>
 
 		<div class="grid links">
@@ -34,6 +34,10 @@ export default {
 			type: Object,
 			required: true
 		}
+	},
+	methods: { 
+		richTextExists(field) { return field && field.length && field[0].text.length }, 
+		videoExists(field) { return field && field.embed_url } 
 	}
 }
 </script>

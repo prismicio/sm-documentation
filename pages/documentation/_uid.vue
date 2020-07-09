@@ -1,32 +1,6 @@
 <template>
 	<section class="wrapper">
-		<article>
-			<!-- Slice section template -->
-			<div v-for="(slice, index) in sliceContent" :key="'slice-' + index">
-				<!-- Text slice component -->
-				<TextSlice v-if="slice.slice_type === 'text'" :slice="slice" />
-				<!-- Text slice component -->
-				<TitleSlice v-if="slice.slice_type === 'title'" :slice="slice" />
-				<!-- SubMenu slice component -->
-				<SubMenuSlice v-if="slice.slice_type === 'sub_menu'" :slice="slice" />
-				<!-- Warning Text slice component -->
-				<WarningSlice v-if="slice.slice_type === 'warning'" :slice="slice" />
-				<!-- Tips Text slice component -->
-				<TipsSlice v-if="slice.slice_type === 'tips'" :slice="slice" />
-				<!-- Tips Text slice component -->
-				<AlternateTextVideo v-if="slice.slice_type === 'textvideo'" :slice="slice" />
-				<!-- Image component -->
-				<FullWidthImage v-if="slice.slice_type === 'image'" :slice="slice" />
-				<!-- Banner component -->
-				<BannerSlice v-if="slice.slice_type === 'banner'" :slice="slice" />
-				<!-- Code Snippet component -->
-				<CodeSlice v-else-if="slice.slice_type === 'code'" :slice="slice" />
-				<!-- Video component -->
-				<VideoSlice v-else-if="slice.slice_type === 'video'" :slice="slice" />
-				<!-- Next/Previous component -->
-				<ArticleControls v-else-if="slice.slice_type === 'article_controls'" :slice="slice" />
-			</div>
-		</article>
+		<SlicesBlock :sliceContent="sliceContent"/>
 		<aside>
 			<TocSlice :slices="sliceContent" />
 		</aside>
@@ -35,42 +9,29 @@
 
 <script>
 // Imports for all slices
-const TextSlice = () => import('../../components/Pages/TextSlice.vue')
-const TitleSlice = () => import('../../components/Pages/TitleSlice.vue')
-const WarningSlice = () => import('../../components/Pages/WarningSlice.vue')
-const TipsSlice = () => import('../../components/Pages/TipsSlice.vue')
-const AlternateTextVideo = () => import('../../components/Pages/AlternateTextVideo.vue')
-const FullWidthImage = () => import('../../components/Pages/FullWidthImage.vue')
-const BannerSlice = () => import('../../components/Pages/BannerSlice.vue')
-const CodeSlice = () => import('../../components/Pages/CodeSlice.vue')
-const ArticleControls = () => import('../../components/Pages/ArticleControls.vue')
+const SlicesBlock = () => import('../../components/Pages/SlicesBlock.vue')
+// Parses Slice to create a table of contents
 const TocSlice = () => import('../../components/Pages/TocSlice.vue')
-const SubMenuSlice = () => import('../../components/Pages/SubMenuSlice.vue')
-const VideoSlice = () => import('../../components/Pages/VideoSlice.vue')
 
 export default {
 	name: 'page',
-	layout: 'docs',
+	layout ({ params, error }) {
+		if (params.parent || params.uid === 'nuxt') {
+			return 'nuxtdocs'
+		} else if (params.parent || params.uid === 'next') {
+			return 'nextjsdocs'
+		} else {
+			return 'defaultdocs'
+		}
+  },
 	components: {
-		TextSlice,
-		TitleSlice,
-		WarningSlice,
-		TipsSlice,
-		AlternateTextVideo,
-		FullWidthImage,
-		BannerSlice,
-		CodeSlice,
-		ArticleControls,
+		SlicesBlock,
 		TocSlice,
-		SubMenuSlice,
-		VideoSlice
 	},
 	async asyncData({ $prismic, params, error }) {
 		try {
-			const document = (await $prismic.api.getByUID('page', params.uid)).data
+			const document = (await $prismic.api.getByUID('page', params.uid, {fetchLinks: 'page.parent'})).data
 			return {
-				// Page content
-				document,
 				// Slices
 				sliceContent: document.body
 			}

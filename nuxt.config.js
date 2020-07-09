@@ -51,9 +51,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // mofules for full static before `nuxt export` (coming in v2.12)
-    '@/modules/static',
-    '@/modules/crawler',
     [
 			'vue-github-buttons/nuxt',
 			{
@@ -70,14 +67,23 @@ export default {
       }
     ],
     // https://prismic-nuxt.js.org/
-    '@nuxtjs/prismic',
+    "@nuxtjs/prismic",
     '@nuxtjs/axios'
   ],
 
   prismic: {
-    endpoint: 'https://slice-machine.cdn.prismic.io/api/v2',
-    linkResolver: '@/plugins/link-resolver',
-    htmlSerializer: '@/plugins/html-serializer',
+    endpoint: "https://slice-machine.cdn.prismic.io/api/v2",
+    apiOptions: {
+      routes: [
+        {
+          type: "page",
+          path: "/documentation/:parent?/:uid",
+          resolvers: {
+            parent: 'parent' // id of the content relationship in the article mask
+          }
+        }
+      ]
+    }
   },
 
   /*

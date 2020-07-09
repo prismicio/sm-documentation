@@ -13,22 +13,21 @@
   },
   "dependencies": {
     "@netsells/nuxt-hotjar": "^0.1.2",
-    "@nuxtjs/axios": "^5.9.7",
+    "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/prismic": "^1.2.1",
     "babel-runtime": "^6.26.0",
     "cookies": "^0.8.0",
-    "nuxt": "^2.12.2",
+    "nuxt": "^2.13.3",
     "prism-es6": "^1.2.0",
     "prismic-dom": "^2.2.3",
     "vue-clipboard2": "^0.3.1",
-    "vue-github-buttons": "^3.1.0",
-    "vue-markdown": "^2.2.4"
+    "vue-github-buttons": "^3.1.0"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.3.0",
-    "node-sass": "^4.13.1",
-    "nodemon": "^2.0.2",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
     "sass-loader": "^8.0.2",
-    "webpack": "^4.41.5"
+    "webpack": "^4.43.0"
   }
 }
