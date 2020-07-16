@@ -1,30 +1,32 @@
 <template>
 	<section class="wrapper">
-		<!-- Slice section template -->
-    <div v-for="(slice, index) in sliceContent" :key="'slice-' + index">
-      <!-- Alternative Text Video component -->
-      <AlternateTextVideo v-if="slice.slice_type === 'textvideo'" :slice="slice" />
-      <!-- Next/Previous component -->
-      <ArticleControls v-else-if="slice.slice_type === 'article_controls'" :slice="slice" />
-      <!-- Banner component -->
-      <BannerSlice v-if="slice.slice_type === 'banner'" :slice="slice" />
-      <!-- Code Snippet component -->
-      <CodeSlice v-else-if="slice.slice_type === 'code'" :slice="slice" />
-      <!-- Image component -->
-      <FullWidthImage v-if="slice.slice_type === 'image'" :slice="slice" />
-      <!-- SubMenu slice component -->
-      <SubMenuSlice v-if="slice.slice_type === 'sub_menu'" :slice="slice" />
-      <!-- Text slice component -->
-      <TextSlice v-if="slice.slice_type === 'text'" :slice="slice" />
-      <!-- Tips Text slice component -->
-      <TipsSlice v-if="slice.slice_type === 'tips'" :slice="slice" />
-      <!-- Text slice component -->
-      <TitleSlice v-if="slice.slice_type === 'title'" :slice="slice" />
-      <!-- Video component -->
-      <VideoSlice v-else-if="slice.slice_type === 'video'" :slice="slice" />
-      <!-- Warning Text slice component -->
-      <WarningSlice v-if="slice.slice_type === 'warning'" :slice="slice" />
-    </div>
+		<article>
+			<!-- Slice section template -->
+			<div v-for="(slice, index) in sliceContent" :key="'slice-' + index">
+				<!-- Alternative Text Video component -->
+				<AlternateTextVideo v-if="slice.slice_type === 'textvideo'" :slice="slice" />
+				<!-- Next/Previous component -->
+				<ArticleControls v-else-if="slice.slice_type === 'article_controls'" :slice="slice" />
+				<!-- Banner component -->
+				<BannerSlice v-if="slice.slice_type === 'banner'" :slice="slice" />
+				<!-- Code Snippet component -->
+				<CodeSlice v-else-if="slice.slice_type === 'code'" :slice="slice" />
+				<!-- Image component -->
+				<FullWidthImage v-if="slice.slice_type === 'image'" :slice="slice" />
+				<!-- SubMenu slice component -->
+				<SubMenuSlice v-if="slice.slice_type === 'sub_menu'" :slice="slice" />
+				<!-- Text slice component -->
+				<TextSlice v-if="slice.slice_type === 'text'" :slice="slice" />
+				<!-- Tips Text slice component -->
+				<TipsSlice v-if="slice.slice_type === 'tips'" :slice="slice" />
+				<!-- Text slice component -->
+				<TitleSlice v-if="slice.slice_type === 'title'" :slice="slice" />
+				<!-- Video component -->
+				<VideoSlice v-else-if="slice.slice_type === 'video'" :slice="slice" />
+				<!-- Warning Text slice component -->
+				<WarningSlice v-if="slice.slice_type === 'warning'" :slice="slice" />
+			</div>
+		</article>
 		<aside>
 			<TocSlice :slices="sliceContent" />
 		</aside>
@@ -52,11 +54,11 @@ export default {
 	layout ({ params, error }) {
 		if (params.parent || params.uid === 'nuxt') {
 			return 'nuxtdocs'
-		} else if (params.parent || params.uid === 'next') {
+		} 
+		if (params.parent || params.uid === 'next') {
 			return 'nextjsdocs'
-		} else {
-			return 'defaultdocs'
 		}
+		return 'defaultdocs'
   },
 	components: {
 		AlternateTextVideo,
