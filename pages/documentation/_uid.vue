@@ -51,14 +51,15 @@ const TocSlice = () => import('../../components/Pages/TocSlice.vue')
 
 export default {
 	name: 'page',
-	layout ({ params, error }) {
-		if (params.parent || params.uid === 'nuxt') {
-			return 'nuxtdocs'
-		} 
-		if (params.parent || params.uid === 'next') {
-			return 'nextjsdocs'
+	layout ({ params }) {
+		switch (params.parent || params.uid) {
+			case 'nuxt':
+				return 'nuxtdocs'
+			case 'next':
+				return 'nextjsdocs'
+			default:
+				return 'defaultdocs'
 		}
-		return 'defaultdocs'
   },
 	components: {
 		AlternateTextVideo,
