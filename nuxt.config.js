@@ -73,7 +73,7 @@ export default {
 
   prismic: {
     endpoint: "https://slice-machine-staging.cdn.prismic.io/api/v2",
-    disableGenerator: true,
+    disableGenerator: false,
     apiOptions: {
       routes: [
         {

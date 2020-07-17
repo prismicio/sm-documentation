@@ -8,7 +8,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "export": "nuxt export",
-    "serve": "nuxt serve",
+    "serve": "npx serve dist -p 8080",
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "nuxt generate",
     "heroku-postbuild": "npm run build"
@@ -22,6 +22,7 @@
     "nuxt": "^2.13.3",
     "prism-es6": "^1.2.0",
     "prismic-dom": "^2.2.3",
+    "prismic-javascript": "^3.0.1",
     "vue-clipboard2": "^0.3.1",
     "vue-github-buttons": "^3.1.0"
   },
