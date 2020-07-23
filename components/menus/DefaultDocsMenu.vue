@@ -1,20 +1,26 @@
 <template>
 		<ul>
 			<li>
-				<label class="dropdown">
-					<div class="dd-button">
-						Frameworks
+				<div class="select-box">
+					<div class="select-box__current" tabindex="1">
+						<div class="select-box__value">
+							<input class="select-box__input" type="radio" id="4" value="5" name="Ben" checked="checked"/>
+							<p class="select-box__input-text">Frameworks</p>
+						</div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
 					</div>
-					<input type="checkbox" class="dd-input" id="test">
-					<ul class="dd-menu">
-						<li>
-							<nuxt-link to="/documentation/nuxt"><img src="../../static/nuxt-logo.svg"/> Nuxt.js</nuxt-link>
-						</li>
-						<li>
-							<nuxt-link to="/documentation/next"><img src="../../static/next-logo.svg"/> Next.js</nuxt-link>
-						</li>
+					<ul class="select-box__list">
+							<nuxt-link to="/documentation/nuxt">
+								<label class="select-box__option" aria-hidden="aria-hidden">
+									<img src="../../static/nuxt-logo.svg"/> Nuxt.js
+								</label>
+							</nuxt-link>
+							<nuxt-link to="/documentation/next">
+								<label class="select-box__option" aria-hidden="aria-hidden">
+									<img src="../../static/next-logo.svg"/> Next.js
+								</label>
+							</nuxt-link>
 					</ul>
-				</label>
+				</div>
 			</li>
 			<li v-for="docItem in docsItems" :key="docItem.field.id">
 				<prismic-link :field="docItem.field">{{ docItem.label }}</prismic-link>
@@ -63,7 +69,6 @@ export default {
 
 ul {
 	position: sticky;
-    top: 30px;
 	padding: 0;
 }
 li {
@@ -102,82 +107,118 @@ a {
 		}
 	}
 }
-
-/* Dropdown */
-
-.dropdown {
-  display: inline-block;
+.select-box {
   position: relative;
-}
-
-.dd-button {
   display: inline-block;
-  border: 1px solid gray;
-  border-radius: 4px;
-  padding: 10px 30px 10px 20px;
-  background-color: #ffffff;
-  cursor: pointer;
-  white-space: nowrap;
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
+  font-size: 18px;
+  color: #60666d;
+  
+  &__current {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    
+    &:focus {
+      & + .select-box__list {
+        opacity: 1;
+
+        // We have to set "animation-name: none;" to make the list visible (read below how it works)
+
+        animation-name: none;
+        
+        .select-box__option {
+          cursor: pointer;
+        }
+      }
+      
+      .select-box__icon {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+  
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    opacity: 0.3;
+    transition: 0.2s ease;
+  }
+  
+  &__value {
+    display: flex;
+  }
+  
+  &__input {
+    display: none;
+    
+    &:checked + .select-box__input-text {
+      display: block;
+    }
+  }
+  
+  &__input-text {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    background-color: #fff;
+		border: 1px solid rgba(206, 210, 210, 0.4);
+		border-radius: 5px;
+  }
+  
+  &__list {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+		border: 1px solid rgba(206, 210, 210, 0.4);
+		border-radius: 5px;
+    
+    // We need to use animation with delay.
+    // Otherwise the click event will not have time to run on label, because this element disapears immediately when .select-box__current element loses the focus.
+    // This delay will not be noticed because we set "opacity" to "0".
+    // We also use "animation-fill-mode: forwards" to make the list stay hidden.
+    
+    animation-name: HideList;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: step-start;
+    box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
+  }
+  
+  &__option {
+    display: block;
+    padding: 15px;
+    background-color: #fff;
+		border-radius: 5px;
+    
+    &:hover,
+    &:focus {
+      color: #546c84;
+      background-color: #fbfbfb;
+    }
+
+		img {
+			width: 25px;
+			margin-bottom: -6px;
+		}
+  }
 }
 
-.dd-button:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  width: 0; 
-  height: 0; 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid black;
-}
-
-.dd-button:hover {
-  background-color: #eeeeee;
-}
-
-
-.dd-input {
-  display: none;
-}
-
-.dd-menu {
-  position: absolute;
-  top: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 0;
-  margin: 2px 0 0 0;
-  box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
-  background-color: #ffffff;
-  list-style-type: none;
-}
-
-.dd-input + .dd-menu {
-  display: none;
-} 
-
-.dd-input:checked + .dd-menu {
-  display: block;
-} 
-
-.dd-menu li {
-  padding: 10px 20px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.dd-menu li:hover {
-  background-color: #f6f6f6;
-}
-
-.dd-menu li a {
-  display: block;
-  margin: -10px -20px;
-  padding: 10px 20px;
-}
-img {
-	width: 25px;
+@keyframes HideList {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
 }
 </style>
