@@ -4,7 +4,7 @@
 		<Body variant="body--white">
 			<div class="docs">
 				<nav>
-					<DocsMenu />
+					<NuxtDocsMenu />
 				</nav>
 				<main>
 					<nuxt />
@@ -19,14 +19,14 @@
 import MainMenu from '@/components/menus/MainMenu'
 import FooterMenu from '@/components/menus/FooterMenu'
 import Body from '@/components/Body'
-import DocsMenu from '@/components/menus/DocsMenu'
+import NuxtDocsMenu from '@/components/menus/NuxtDocsMenu'
 
 export default {
 	components: {
 		MainMenu,
 		FooterMenu,
 		Body,
-		DocsMenu
+		NuxtDocsMenu
 	}
 }
 </script>

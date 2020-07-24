@@ -10,12 +10,6 @@ export default function (doc) {
   if (doc.type === 'home') {
     return `/`
   }
-  if (doc.type === 'component_library') {
-    return `/component-library`
-  }
-  if (doc.uid === 'about') {
-    return `/${doc.uid}`
-  }
   if (doc.uid === 'documentation') {
     return `/${doc.uid}`
   }
@@ -23,7 +17,11 @@ export default function (doc) {
     doc.tags.includes('tutorials') ||
     doc.tags.includes('deep-learning')
   ) {
-    return `/documentation/${doc.uid}`
+    if (!doc.data) {
+      return `/documentation/${doc.uid}`
+    } else {
+      return (doc.data.parent ? `/documentation/${doc.data.parent.uid}/${doc.uid}` : `/documentation/${doc.uid}`)
+    }
   }
-  return '/not-found'
+  return null
 }

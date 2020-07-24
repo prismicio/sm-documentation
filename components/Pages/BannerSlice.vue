@@ -26,10 +26,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .banner-content {
-	max-width: 450px;
+	max-width: 750px;
 	min-height: 240px;
 	display: flex;
 	flex-direction: column;

@@ -12,7 +12,12 @@ export const actions = {
                 body {
                   ...on sub_menu {
                     repeat {
-                      ...repeatFields
+                      link_label
+                      link_to_menu_item {
+                        ...on page {
+                          parent
+                        }
+                      }
                     }
                   }
                 }
@@ -27,7 +32,9 @@ export const actions = {
           commit('menus/SET', {
             main: menus.results.find(e => e.uid === 'main_menu').data,
             side: menus.results.find(e => e.uid === 'side_menu').data,
-            docs: menus.results.find(e => e.uid === 'docs_menu').data,
+            default_docs: menus.results.find(e => e.uid === 'default_docs_menu').data,
+            nuxt_docs: menus.results.find(e => e.uid === 'nuxt_docs_menu').data,
+            next_docs: menus.results.find(e => e.uid === 'next_docs_menu').data,
             foot: menus.results.find(e => e.uid === 'footer_menu').data
           })
         })
