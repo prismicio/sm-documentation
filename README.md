@@ -1,11 +1,12 @@
-# Prismic Nuxt.js Multi-page website example
+# Slice Machine Website built with Prismic & Nuxt.js
 
-> [Nuxt.js](https://nuxtjs.org) example multi-page website project with content managed in [Prismic](https://prismic.io)
+> A [Nuxt.js](https://nuxtjs.org) website with content managed in [Prismic](https://prismic.io) to showcase our [Slice Machine Project](https://www.slicemachine.dev/). 
 
-## Check out our article for a step by step guide to getting this project up and running
+Feel free to suggest changes and help us keep the website update to date. Suggest changes for content/documentation in the issues and we'll update the Prismic Repository.
 
-> [Prismic project guide](https://user-guides.prismic.io/examples/nuxt-js-samples/nuxtjs-sample-multi-page-website-with-navigation)
+## Visit the Website
 
+[You visit the website to learn more about Slice Machine here.](https://www.slicemachine.dev/)
 
 ## Launch this project in your local environment
 
