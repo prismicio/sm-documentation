@@ -13,10 +13,7 @@ export default function (doc) {
   if (doc.uid === 'documentation') {
     return `/${doc.uid}`
   }
-  if (
-    doc.tags.includes('tutorials') ||
-    doc.tags.includes('deep-learning')
-  ) {
+  if (doc.tags.includes('docs-sub-page')) {
     if (!doc.data) {
       return `/documentation/${doc.uid}`
     } else {
