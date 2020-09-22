@@ -1,6 +1,6 @@
 ---
-name: documentation update template
-about: Provide basic information about the change
+name: Documentation update template
+about: Provide information needed to change a document.
 title: "[Docs update] New step in creating a Storybook"
 labels: ''
 assignees: ''

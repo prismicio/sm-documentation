@@ -1,6 +1,6 @@
 ---
-name: documentation new feature template
-about: Provide detailed information about the new feature
+name: Documentation new feature template
+about: Provide detailed info about a new feature.
 title: "[Docs new feature] New step in creating a Storybook"
 labels: ''
 assignees: ''

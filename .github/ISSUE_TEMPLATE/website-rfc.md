@@ -1,6 +1,6 @@
 ---
-name: website change template
-about: Provide basic information about the change you want to see
+name: Website app change template
+about: Provide information about a change to the website you wish to see.
 title: "[RFC] Add a new button"
 labels: ''
 assignees: ''

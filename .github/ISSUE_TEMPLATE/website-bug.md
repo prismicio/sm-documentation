@@ -1,6 +1,6 @@
 ---
-name: website bug template
-about: Provide basic information about the bug that you see
+name: Website app bug template
+about: Provide basic information about a bug in the web app.
 title: "[BUG] Menu link broken"
 labels: ''
 assignees: ''
