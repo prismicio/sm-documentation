@@ -15,14 +15,14 @@
   },
   "dependencies": {
     "@netsells/nuxt-hotjar": "^0.1.2",
-    "@nuxtjs/axios": "^5.11.0",
-    "@nuxtjs/prismic": "^1.2.1",
+    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/prismic": "^1.2.4",
     "babel-runtime": "^6.26.0",
     "cookies": "^0.8.0",
-    "nuxt": "^2.13.3",
+    "nuxt": "^2.14.6",
     "prism-es6": "^1.2.0",
-    "prismic-dom": "^2.2.3",
-    "prismic-javascript": "^3.0.1",
+    "prismic-dom": "^2.2.4",
+    "prismic-javascript": "^3.0.2",
     "vue-clipboard2": "^0.3.1",
     "vue-github-buttons": "^3.1.0"
   },
@@ -31,6 +31,6 @@
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "sass-loader": "^8.0.2",
-    "webpack": "^4.43.0"
+    "webpack": "^4.44.2"
   }
 }

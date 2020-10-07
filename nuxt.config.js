@@ -72,15 +72,16 @@ export default {
   ],
 
   prismic: {
-    endpoint: "https://slice-machine.cdn.prismic.io/api/v2",
+    endpoint: "https://slice-machine.wroom.io/api/v2",
     disableGenerator: false,
     apiOptions: {
       routes: [
         {
           type: "page",
-          path: "/documentation/:parent?/:uid",
+          path: "/:grandparentCategory?/:parentCategory?/:uid",
           resolvers: {
-            parent: 'parent' // id of the content relationship in the article mask
+            parentCategory: 'parent',
+            grandparentCategory: 'parent.parent'
           }
         }
       ]
