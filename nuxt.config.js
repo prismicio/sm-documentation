@@ -1,5 +1,4 @@
 export default {
-  mode: 'universal',
   target: 'static',
   /*
   ** Headers of the page
@@ -39,7 +38,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/prism'
+    '@/plugins/prism',
+    // '@/plugins/buildHead',
+    { src: "@/plugins/prismicLinks", ssr: false }
   ],
 
   buildModules: [
@@ -72,15 +73,16 @@ export default {
   ],
 
   prismic: {
-    endpoint: "https://slice-machine.cdn.prismic.io/api/v2",
+    endpoint: "https://slice-machine.prismic.io/api/v2",
     disableGenerator: false,
     apiOptions: {
       routes: [
         {
           type: "page",
-          path: "/documentation/:parent?/:uid",
+          path: "/:grandparentCategory?/:parentCategory?/:uid",
           resolvers: {
-            parent: 'parent' // id of the content relationship in the article mask
+            parentCategory: 'parent',
+            grandparentCategory: 'parent.parent'
           }
         }
       ]
@@ -94,11 +96,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-   transpile: ['prism-es6'],
-    extend(config, ctx) {
-      // to transform link with <nuxt-link> for the htmlSerializer
-      config.resolve.alias['vue'] = 'vue/dist/vue.common'
-    }
+   transpile: ['prism-es6']
   },
 
   generate: {

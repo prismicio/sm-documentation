@@ -17,10 +17,9 @@
 						<prismic-link :field="menuLink.link">{{ menuLink.link_label }}</prismic-link>
 					</li>
 					<li>
-						<gh-btns-star slug="prismicio/slice-machine" class="gh-button-star"></gh-btns-star>
-					</li>
-					<li>
-						<gh-btns-fork slug="prismicio/slice-machine" class="gh-button-fork"></gh-btns-fork>
+						<a href="https://github.com/prismicio/slice-machine">
+							<img class="gh-logo" src="https://images.prismic.io/slice-machine/871c06d5-6254-4367-815c-cbf99de6ac29_github-icon-png-29.jpg?auto=compress,format">
+						</a>
 					</li>
 				</ul>
 				<Burger></Burger>
@@ -36,39 +35,7 @@
 				</nuxt-link>
 				<Burger class="side-burger"></Burger>
 			</div>
-			<ul class="sidebar-panel-nav">
-				<div v-for="menuLink in menu.menu_item" :key="menuLink.id">
-					<li v-if="menuLink.link_label === 'Slices Library'" class="top-level" @click.prevent="toggle">
-						<prismic-link :field="menuLink.link">{{ menuLink.link_label }}</prismic-link>
-					</li>
-					<li
-						v-else-if="menuLink.link_label === 'Documentation'"
-						class="top-level"
-						@click="accordionToggle()"
-					>
-						<a>
-							<span>{{ menuLink.link_label }}</span>
-							<span class="accordion-item-trigger-icon" :class="{ isOpen: open }"></span>
-						</a>
-						<transition name="slide-fade">
-							<ul v-show="open" class="second-level">
-								<li v-for="sideLink in side.menu_item" :key="sideLink.id">
-									<prismic-link :field="sideLink.link">{{ sideLink.link_label }}</prismic-link>
-								</li>
-								<!-- <li class="menu-sub-title">
-									<b>Slice Components</b>
-								</li>
-								<li v-for="listItem in lst" :key="listItem.displayName" @click.prevent="toggle">
-									<nuxt-link :to="`/components/${listItem.displayName}`">{{ listItem.meta.title }}</nuxt-link>
-								</li> -->
-							</ul>
-						</transition>
-					</li>
-					<li v-else class="top-level" @click.prevent="toggle">
-						<prismic-link :field="menuLink.link">{{ menuLink.link_label }}</prismic-link>
-					</li>
-				</div>
-			</ul>
+			<LevelsDropdown />
 		</Sidebar>
 	</div>
 </template>
@@ -79,14 +46,15 @@ import { store, mutations } from '@/store/popoutmenu.js'
 import Burger from '@/components/menus/Burger.vue'
 import Sidebar from '@/components/menus/Sidebar.vue'
 import Container from '@/components/Container'
-
+import LevelsDropdown from '@/components/menus/LevelsDropdown'
 
 export default {
 	name: 'MainMenu',
 	components: {
 		Container,
 		Burger,
-		Sidebar
+		Sidebar,
+		LevelsDropdown
 	},
 	data() {
 		return {
@@ -170,57 +138,16 @@ export default {
 			a {
 				text-decoration: none;
 				color: #fff;
-				opacity: 0.5;
+				opacity: 0.6;
 				transition: opacity 0.1s ease;
 				&.nuxt-link-exact-active, &:hover {
 					opacity: 1;
 					font-weight: normal;
 				}
 			}
-			.gh-button {
-				opacity: 1;
-				color: $black-primary !important;
-				border-radius: 0.25em;
-				cursor: pointer;
-				display: inline-block;
-				font-family: $base-font-primary;
-				font-size: 12px;
-				font-weight: 600;
-				line-height: 20px;
-				padding: 3px 10px;
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-				color: #24292e;
-		    	background-color: #eff3f6;
-		    	background-image: -moz-linear-gradient(top, #fafbfc, #eff3f6 90%);
-		    	background-image: linear-gradient(180deg, #fafbfc, #eff3f6 90%);
-		    	filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#FFFAFBFC', endColorstr='#FFEEF2F5');
-		    	border-color: #cdcfd1;
-		    	border-color: rgba(27,31,35,.2);
-		    	&:hover{
-		    		font-weight: 600;
-		    	}
-				&-star {
-					border-radius: 0.25em;
-					color: $black-primary;
-					&:hover {
-						background-color: $grey-secondary;
-					}
-				}
-				&-fork {
-					background-color: $black-primary;
-					border-radius: 0.25em;
-					&:hover {
-						background-color: $black-secondary;
-					}
-				}
-				.octicon {
-					display: inline-block;
-					vertical-align: text-top;
-					fill: currentColor;
-				}
+			.gh-logo {
+				width: 20px;
+				margin-top: 7px;
 			}
 		}
 	}
@@ -250,59 +177,6 @@ export default {
 			@include lg {
 				font-size: 16px;
 			}
-		}
-	}
-	.sidebar-panel-nav {
-		padding: 0;
-		.top-level {
-			border-bottom: 1px solid $grey-transparent;
-			a {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 1.4em;
-				font-weight: bold;
-				cursor: pointer;
-			}
-			.second-level {
-				padding: 1em;
-				border-top: 1px solid $grey-transparent;
-				background-color: $grey-secondary;
-				li {
-					padding: 0;
-					a {
-						padding: 0.7em 1.4em;
-						font-weight: normal;
-					}
-				}
-				.menu-sub-title {
-					padding: 1.4em;
-				}
-			}
-		}
-		li {
-			list-style-type: none;
-		}
-		.accordion-item-trigger-icon {
-			$size: 8px;
-			width: $size;
-			height: $size;
-			margin-right: 7px;
-			border-right: 2px solid #363636;
-			border-bottom: 2px solid #363636;
-			transform: translateY(-$size / 4) rotate(45deg);
-			transition: transform 0.2s ease;
-			&.isOpen {
-				transform: translateY($size / 4) rotate(225deg);
-			}
-		}
-		.slide-fade-enter-active,
-		.slide-fade-leave-active {
-			transition: all 0.3s ease;
-		}
-		.slide-fade-enter,
-		.slide-fade-leave-to {
-			opacity: 0;
 		}
 	}
 	a {

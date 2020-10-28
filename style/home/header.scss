@@ -35,13 +35,35 @@ header {
       margin-top: 30px;
       font-weight: 200;
       font-size: 14px;
-      img {
-        width: 18px;
+      .nuxtjs {
+        img {
+          padding: 0 5px;
+          width: 75px;
+          transform: translate(0px,1px);
+          -ms-transform: translate(0px,1px); /* IE 9 */
+          -webkit-transform: translate(0px,1px); /* Safari and Chrome */
+          -o-transform: translate(0px,1px); /* Opera */
+          -moz-transform: translate(0px,1px); /* Firefox */
+        }
+      }
+      .nextjs {
+        padding: 0 5px;
+        transform: translate(0px,8px);
+        -ms-transform: translate(0px,8px); /* IE 9 */
+        -webkit-transform: translate(0px,8px); /* Safari and Chrome */
+        -o-transform: translate(0px,8px); /* Opera */
+        -moz-transform: translate(0px,8px); /* Firefox */
+        shape-rendering:auto;
       }
       .prismic{
         img{
-          position: relative;
-          top: 3px;
+          padding: 0 5px;
+          width: 80px;
+          transform: translate(0px,5px);
+          -ms-transform: translate(0px,5px); /* IE 9 */
+          -webkit-transform: translate(0px,5px); /* Safari and Chrome */
+          -o-transform: translate(0px,5px); /* Opera */
+          -moz-transform: translate(0px,5px); /* Firefox */
         }
       }
     }

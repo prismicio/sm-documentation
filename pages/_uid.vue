@@ -35,32 +35,31 @@
 
 <script>
 // Imports for all slices
-const AlternateTextVideo = () => import('../../components/Pages/AlternateTextVideo.vue')
-const ArticleControls = () => import('../../components/Pages/ArticleControls.vue')
-const BannerSlice = () => import('../../components/Pages/BannerSlice.vue')
-const CodeSlice = () => import('../../components/Pages/CodeSlice.vue')
-const FullWidthImage = () => import('../../components/Pages/FullWidthImage.vue')
-const SubMenuSlice = () => import('../../components/Pages/SubMenuSlice.vue')
-const TextSlice = () => import('../../components/Pages/TextSlice.vue')
-const TipsSlice = () => import('../../components/Pages/TipsSlice.vue')
-const TitleSlice = () => import('../../components/Pages/TitleSlice.vue')
-const VideoSlice = () => import('../../components/Pages/VideoSlice.vue')
-const WarningSlice = () => import('../../components/Pages/WarningSlice.vue')
+const AlternateTextVideo = () => import('../components/Pages/AlternateTextVideo.vue')
+const ArticleControls = () => import('../components/Pages/ArticleControls.vue')
+const BannerSlice = () => import('../components/Pages/BannerSlice.vue')
+const CodeSlice = () => import('../components/Pages/CodeSlice.vue')
+const FullWidthImage = () => import('../components/Pages/FullWidthImage.vue')
+const SubMenuSlice = () => import('../components/Pages/SubMenuSlice.vue')
+const TextSlice = () => import('../components/Pages/TextSlice.vue')
+const TipsSlice = () => import('../components/Pages/TipsSlice.vue')
+const TitleSlice = () => import('../components/Pages/TitleSlice.vue')
+const VideoSlice = () => import('../components/Pages/VideoSlice.vue')
+const WarningSlice = () => import('../components/Pages/WarningSlice.vue')
 // Parses Slice to create a table of contents
-const TocSlice = () => import('../../components/Pages/TocSlice.vue')
+const TocSlice = () => import('../components/Pages/TocSlice.vue')
 
 export default {
 	name: 'page',
-	layout ({ params }) {
-		switch (params.parent || params.uid) {
-			case 'nuxt':
-				return 'nuxtdocs'
-			case 'next':
-				return 'nextjsdocs'
-			default:
-				return 'defaultdocs'
+	layout: 'defaultdocs',
+	head () {
+		return {
+			title: this.page.data.meta_title,
+			meta: [
+				{ hid: 'description', name: 'description', content: this.page.data.meta_description }
+			]
 		}
-  },
+	},
 	components: {
 		AlternateTextVideo,
     ArticleControls,
@@ -77,10 +76,11 @@ export default {
 	},
 	async asyncData({ $prismic, params, error }) {
 		try {
-			const document = (await $prismic.api.getByUID('page', params.uid, {fetchLinks: 'page.parent'})).data
+			const document = (await $prismic.api.getByUID('page', params.uid, {fetchLinks: 'page.parent'}))
 			return {
+				page: document,
 				// Slices
-				sliceContent: document.body
+				sliceContent: document.data.body
 			}
 		} catch (e) {
 			error({ statusCode: 404, message: 'Page not found' })
@@ -90,7 +90,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../style/variables.scss';
+@import '../style/variables.scss';
 img {
 	max-width: 100%;
 }

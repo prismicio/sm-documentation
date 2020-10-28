@@ -1,6 +1,6 @@
 <template>
 	<blockquote class="tips">
-		<p class="title">{{slice.primary.box_title}}</p>
+		<p class="title">💡{{slice.primary.box_title}}</p>
 		<prismic-rich-text :field="slice.primary.text" />
 	</blockquote>
 </template>
@@ -32,7 +32,7 @@ export default {
     		&.title{
     			font-weight: 700;
     			margin-bottom: 10px;
-    		}
+				}
 		}
 	}
 </style>

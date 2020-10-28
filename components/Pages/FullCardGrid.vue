@@ -42,6 +42,7 @@ export default {
 @import '../../style/variables.scss';
 	.introduction{
 		.grid{
+			margin-top: 30px;
 			@include lg {
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
@@ -71,7 +72,6 @@ export default {
     				border: 1px solid rgba(206, 210, 210, 0.4);
     				border-radius: 4px;
     				padding: 30px;
-    				margin-top: 30px;
 
     				p,h3{margin: 0;}
 
