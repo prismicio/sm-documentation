@@ -12,7 +12,7 @@
       </div>
       <div v-else-if="menuitem.slice_type === '1st_level' && menuitem.primary.nav_link.isBroken !== false" class="item">
         <input type="checkbox" :id="menuitem.primary.link_text"/>
-        <label :for="menuitem.primary.link_text" class="top-level-dropdown"><img class="arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>{{ menuitem.primary.link_text }}</label>
+        <label :for="menuitem.primary.link_text" class="top-level-dropdown"><img class="arrow" src="~/static/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>{{ menuitem.primary.link_text }}</label>
         
         <ul>
             <div v-for="item in menuitem.children" :key="item.primary.link_text">
@@ -25,7 +25,7 @@
                     <div>
                         <input type="checkbox" :id="menuitem.primary.link_text.concat(item.primary.link_text)"/>
                         <label :for="menuitem.primary.link_text.concat(item.primary.link_text)" class="second-level-dropdown">
-                            <img class="arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>{{item.primary.link_text}}
+                            <img class="arrow" src="~/static/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>{{item.primary.link_text}}
                         </label>
                         <ul v-for="subitem in item.items" :key="subitem.third_level_link_text">
                             <prismic-link :field="subitem.third_level_link">
