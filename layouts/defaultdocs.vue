@@ -4,7 +4,7 @@
 		<Body variant="body--white">
 			<div class="docs">
 				<nav>
-					<DefaultDocsMenu />
+					<LevelsDropdown />
 				</nav>
 				<main>
 					<nuxt />
@@ -19,14 +19,14 @@
 import MainMenu from '@/components/menus/MainMenu'
 import FooterMenu from '@/components/menus/FooterMenu'
 import Body from '@/components/Body'
-import DefaultDocsMenu from '@/components/menus/DefaultDocsMenu'
+import LevelsDropdown from '@/components/menus/LevelsDropdown'
 
 export default {
 	components: {
 		MainMenu,
 		FooterMenu,
 		Body,
-		DefaultDocsMenu
+		LevelsDropdown
 	}
 }
 </script>
