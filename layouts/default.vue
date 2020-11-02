@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="announcement-callout">🚀 Slice machine is out, <a href="https://prismic.io/blog/announcing-slice-machine">Read the announcement →</a></div>
+		<div class="announcement-callout">📣 To celebrate Slice Builder release we are running a contest! <a href="https://prismic.io/blog/slice-contest?utm_campaign=devexp&utm_source=smdev&utm_medium=slicecontestpost">Read the announcement →</a></div>
 		<MainMenu />
 		<nuxt />
 		<FooterMenu theme="dark" />
