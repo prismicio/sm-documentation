@@ -27,8 +27,8 @@
                         <label :for="menuitem.primary.link_text.concat(item.primary.link_text)" class="second-level-dropdown">
                             <img class="arrow" src="~/static/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>{{item.primary.link_text}}
                         </label>
-                        <ul v-for="subitem in item.items" :key="subitem.third_level_link_text">
-                            <prismic-link :field="subitem.third_level_link">
+                        <ul class="third-level-group">
+                            <prismic-link v-for="subitem in item.items" :key="subitem.third_level_link_text" :field="subitem.third_level_link">
                                 <li class="sub-item">
                                     <label class="third-level-link">{{subitem.third_level_link_text}}</label>
                                 </li>
@@ -149,9 +149,14 @@ label {
         background: #e9e9e9;
 	}
 }
+.third-level-group {
+    padding: 5px 0 5px 0;
+    background: #e9e9e9;
+}
 .third-level-link {
     font-size: .8em;
-    padding-left: 5px;
+    line-height: 20px;
+    padding: 10px 0 10px 5px;
     border-left: 5px solid #e9e9e9;
     background: #e9e9e9;
     &:hover {
