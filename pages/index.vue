@@ -29,7 +29,7 @@
 						/></b>
 					</div>
 					<div class="CTA">
-						<a class="how_it_work" href="#video"><img src="https://images.prismic.io/slice-machine/6a78160b-7154-4a6d-8570-61ac208b6859_play-button.svg?auto=compress,format" />See how it works</a> <a class="get_started" href="/documentation">Get started →</a>
+						<a class="how_it_work" href="https://prismic.io/docs/technologies/getting-started-nextjs">Get started Next.js →</a> <a class="get_started" href="https://prismic.io/docs/technologies/getting-started-nuxtjs">Get started Nuxt.js →</a>
 					</div>
 					</div>
 				</div>
