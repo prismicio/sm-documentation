@@ -1,75 +1,117 @@
 export default {
-  target: 'static',
+  target: "static",
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
-    title: 'Slice Machine',
+    title: "Slice Machine",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Devs make the parts, users make the websites.' },
-      { property: 'og:title', content: 'Slice Machine'},
-      { property: 'og:description', content: 'Devs make the parts, users make the websites.'},
-      { property: 'og:image', content: 'https://images.prismic.io/slice-machine/c638562a-dfb5-4477-baa2-6046e0964520_Slicemachine-social-card.png?auto=compress,format' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content: "Devs make the parts, users make the websites.",
+      },
+      { property: "og:title", content: "Slice Machine" },
+      {
+        property: "og:description",
+        content: "Devs make the parts, users make the websites.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://images.prismic.io/slice-machine/c638562a-dfb5-4477-baa2-6046e0964520_Slicemachine-social-card.png?auto=compress,format",
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://images.prismic.io/slice-machine/f8c31810-7dda-488b-a487-60ee694d6ffc_Favicon.png?auto=compress,format' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
-    ]
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href:
+          "https://images.prismic.io/slice-machine/f8c31810-7dda-488b-a487-60ee694d6ffc_Favicon.png?auto=compress,format",
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic",
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic",
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap",
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800&display=swap",
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+      },
+    ],
   },
 
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+   ** Customize the progress-bar color
+   */
+  loading: { color: "#fff" },
 
   /*
-  ** Global CSS
-  */
-  css: ['@/style/_global.scss'],
+   ** Global CSS
+   */
+  css: ["@/style/_global.scss"],
 
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: [
-    '@/plugins/prism',
+    "@/plugins/prism",
     // '@/plugins/buildHead',
-    { src: "@/plugins/prismicLinks", ssr: false }
+    { src: "@/plugins/prismicLinks", ssr: false },
   ],
 
   buildModules: [
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-43699356-5'
-    }]
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-43699356-5",
+      },
+    ],
   ],
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     [
-			'vue-github-buttons/nuxt',
-			{
-				css: false,
-				useCache: false
-			}
-		],
+      "vue-github-buttons/nuxt",
+      {
+        css: false,
+        useCache: false,
+      },
+    ],
     // hotjar
     [
-      '@netsells/nuxt-hotjar',
+      "@netsells/nuxt-hotjar",
       {
-        id: '1748750',
-        sv: '6'
-      }
+        id: "1748750",
+        sv: "6",
+      },
     ],
     // https://prismic-nuxt.js.org/
     "@nuxtjs/prismic",
-    '@nuxtjs/axios'
+    "@nuxtjs/axios",
   ],
 
   prismic: {
@@ -81,25 +123,29 @@ export default {
           type: "page",
           path: "/:grandparentCategory?/:parentCategory?/:uid",
           resolvers: {
-            parentCategory: 'parent',
-            grandparentCategory: 'parent.parent'
-          }
-        }
-      ]
-    }
+            parentCategory: "parent",
+            grandparentCategory: "parent.parent",
+          },
+        },
+      ],
+    },
   },
 
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
-   transpile: ['prism-es6']
+     ** You can extend webpack config here
+     */
+    transpile: ["prism-es6"],
   },
 
   generate: {
-    fallback: '404.html' // Netlify reads a 404.html, Nuxt will load as an SPA
-  }
-}
+    fallback: "404.html", // Netlify reads a 404.html, Nuxt will load as an SPA
+  },
+  serverMiddleware: [
+    // Server-side redirects
+    "~/serverMiddleware/redirects",
+  ],
+};
