@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="announcement-callout">💚 We're working on the future of our Vue kit and Vue 3 support! Come <a href="https://github.com/prismicio/prismic-vue/issues/45" target="_blank" rel="noopener">share your suggestions</a> or <a href="https://github.com/prismicio/prismic-vue/issues/46" target="_blank" rel="noopener">comment the RFC</a> with us~!</div>
+		<div class="announcement-callout">💚 We're working on the future of our Vue kit and Vue 3 support! Vue.js enthusiast? Come <a href="https://github.com/prismicio/prismic-vue/issues/45" target="_blank" rel="noopener">share your suggestions</a> with us!</div>
 		<MainMenu />
 		<nuxt />
 		<FooterMenu theme="dark" />
