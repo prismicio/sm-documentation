@@ -73,7 +73,11 @@ export default {
   ],
 
   prismic: {
-	@@ -81,25 +123,29 @@ export default {
+    endpoint: "https://slice-machine.prismic.io/api/v2",
+    disableGenerator: false,
+    apiOptions: {
+      routes: [
+        {
           type: "page",
           path: "/:grandparentCategory?/:parentCategory?/:uid",
           resolvers: {
