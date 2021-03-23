@@ -1,0 +1,174 @@
+{
+  "redirects": [
+    {
+      "source": "/documentation/nuxt/quick-start",
+      "to": "https://prismic.io/docs/technologies/run-a-pre-configured-project-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/install-npm",
+      "destination": "https://prismic.io/docs/technologies/configure-project-manually-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/install-the-cli",
+      "destination": "https://prismic.io/docs/technologies/configure-project-manually-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/sign-in-to-the-cli",
+      "destination": "https://prismic.io/docs/technologies/configure-project-manually-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/create-a-new-nuxt-app",
+      "destination": "https://prismic.io/docs/technologies/configure-project-manually-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/run-the-prismic-slice-machine-command",
+      "to": "https://prismic.io/docs/technologies/configure-project-automatically-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/add-the-slice-zone-to-your-page",
+      "destination": "https://prismic.io/docs/technologies/query-content-from-cms-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/run-your-project",
+      "to": "https://prismic.io/docs/technologies/run-a-pre-configured-project-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/query-with-the-slice-zone",
+      "destination": "https://prismic.io/docs/technologies/query-content-from-cms-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/query-with-the-prismic-object",
+      "destination": "https://prismic.io/docs/technologies/query-content-from-cms-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/nav-bars-and-menus",
+      "destination": "https://prismic.io/docs/technologies/nav-bars-footers-and-menus-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/the-nuxt-config-js-file",
+      "destination": "https://prismic.io/docs/technologies/configure-project-manually-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/html-serializer",
+      "destination": "https://prismic.io/docs/technologies/html-serializer-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt/deploying",
+      "to": "https:///prismic.io/docs/technologies/deployment-rebuilding-previewing-nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/nextjs-quick-start",
+      "destination": "https://prismic.io/docs/technologies/getting-started-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-installing-npm",
+      "destination": "https://prismic.io/docs/technologies/installing-npm-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-install-the-prismic-cli",
+      "destination": "https://prismic.io/docs/technologies/log-in-with-the-cli-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-log-in-with-the-cli",
+      "destination": "https://prismic.io/docs/technologies/log-in-with-the-cli-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-create-a-new-app",
+      "destination": "https://prismic.io/docs/technologies/create-a-new-app-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-running-the-prismic-slice-machine-command",
+      "to": "https://prismic.io/docs/technologies/running-the-prismic-slice-machine-command-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-adding-the-slicezone-component",
+      "to": "https://prismic.io/docs/technologies/adding-the-slicezone-component-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-running-your-project",
+      "destination": "https://prismic.io/docs/technologies/running-your-project-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-customization",
+      "destination": "https://prismic.io/docs/technologies/customization-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/nextjs-query-by-uid",
+      "destination": "https://prismic.io/docs/technologies/query-by-uid-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-query-a-singleton-type",
+      "destination": "https://prismic.io/docs/technologies/query-a-singleton-type-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-content-outside-of-the-slicezone",
+      "to": "https://prismic.io/docs/technologies/content-outside-of-the-slicezone-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/next-nav-bars-and-menus",
+      "destination": "https://prismic.io/docs/technologies/navbars-footers-and-menus-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/lifecycle-hooks",
+      "destination": "https://prismic.io/docs/technologies/lifecycle-hooks-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/nextjs-html-serializer",
+      "destination": "https://prismic.io/docs/technologies/html-serializer-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/nextjs-previews",
+      "destination": "https://prismic.io/docs/technologies/previews-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next/nextjs-deployment-rebuilding",
+      "destination": "https://prismic.io/docs/technologies/deployment-rebuilding-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/next",
+      "destination": "https://prismic.io/docs/technologies/getting-started-nextjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/nuxt",
+      "destination": "https://prismic.io/docs/technologies/nuxtjs",
+      "permanent": true
+    },
+    {
+      "source": "/documentation/(.*)",
+      "destination": "https://prismic.io/docs",
+      "permanent": true
+    }
+  ]
+}
