@@ -26,7 +26,7 @@ npm start
 
 ## Learn more about using Prismic with Nuxt.js
 
-> [Prismic Nuxt.js Documentation](https://prismic.io/docs/vuejs/beyond-the-api/primsic-nuxt)
+> [Prismic Nuxt.js Documentation](https://prismic.io/docs/technologies/nuxtjs)
 
 ## License
 
