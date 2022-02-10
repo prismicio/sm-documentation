@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.3.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.4",
     "sass-loader": "^8.0.2",
     "webpack": "^4.44.2"
